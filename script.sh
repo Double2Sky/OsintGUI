@@ -10,4 +10,6 @@ cd /root/Cases/$domain
 		 		sleep 5
 		 		midori $domain-r3con1z3r.html
 		 		sleep 3
-		 		arachnid http://$domain
+		 		thunar /root/Cases/$domain 
+		 			sleep 3
+		 			arachnid http://$domain
