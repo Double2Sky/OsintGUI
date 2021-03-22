@@ -11,6 +11,6 @@ domain=$(zenity --entry --title "Domain / subdomains / emails" --text "Enter tar
 				photon -u $domain -l 3 -t 100 -o /root/Cases/$domain/$timestamp-$domain
 					sleep 3
 					theHarvester -d $domain -b baidu,bing,google,yahoo,virustotal,certspotter,crtsh,dnsdumpster,duckduckgo,exalead,hackertarget,intelx,hunter,netcraft,otx,pentesttools,projectdiscovery,qwant,rapiddns,securityTrails,sublist3r,threatcrowd,threatminer,trello,twitter,urlscan -f /root/Cases/$domain/$timestamp-$domain.html
-						firefox /root/Cases/$domain/$timestamp-$domain.html
+						midori /root/Cases/$domain/$timestamp-$domain.html
 							thunar "/root/Cases/$domain" >/dev/null 2>&1
 		
