@@ -3,6 +3,7 @@
 timestamp=$(date +%Y-%m-%d:%H:%M)
 domain=$(zenity --entry --title "Domain / subdomains / emails" --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
 	mkdir /root/Cases/$domain
+	cd /root/Cases/$domain
 		amass intel -whois -ip -src -d $domain  -o /root/Cases/$domain/$timestamp-$domain.1.txt 
 		amass enum -src -brute -d $domain -o /root/Cases/$domain/$timestamp-$domain.2.txt -d $domain
 			sleep 3
