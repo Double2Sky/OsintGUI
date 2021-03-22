@@ -19,11 +19,13 @@ domain=$(zenity --entry --title "Domain / subdomains / emails" --text "Enter tar
 								sleep 3 
 								finalrecon --full http://$domain -o /root/Cases/$domain/$domain.fn
 									sleep 3
-									goohak $domain
-									sleep 1					
-									firefox /root/Cases/$domain/$timestamp-$domain.html
-									sleep 1
-									thunar "/root/Cases/$domain" >/dev/null 2>&1
-									sleep 1
-									lazygrandma $domain
+									getallurls $domain -o /root/Cases/$domain/$domain.getallurls.txt
+										sleep 3	
+										knockpy -c $domain
+										sleep 1				
+										midori /root/Cases/$domain/$timestamp-$domain.html
+										sleep 1
+										thunar "/root/Cases/$domain" >/dev/null 2>&1
+											sleep 1
+											arachnid http://$domain
 									
