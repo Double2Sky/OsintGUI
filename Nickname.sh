@@ -7,5 +7,5 @@ cd /root/Cases/Nickname/$NICKNAME
 		sleep 5
 		Investigo $NICKNAME -s -d
 			sleep 5
-			search4 -u $NICKNAME
+			search4 -u $NICKNAME | >> output.txt
 				thunar /root/Cases/Nickname/$NICKNAME
