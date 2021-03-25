@@ -8,4 +8,4 @@ cd /root/Cases/Nickname/$NICKNAME
 		Investigo $NICKNAME -s -d
 			sleep 5
 			search4 -u $NICKNAME
-				thunar '/root/Cases/Nickname/$NICKNAME'
+				thunar /root/Cases/Nickname/$NICKNAME
