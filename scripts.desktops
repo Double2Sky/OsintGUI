@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+EMAIL=$(zenity --entry --text="Enter email")
+buster -e $EMAIL 
+
+#!/usr/bin/env bash
+cd /opt/cignotrack
+bash cignotrack.sh
+
+#!/usr/bin/env bash
+URL=$(zenity --entry --text="Enter URL")
+lulzbuster -s $URL 
+
+#!/usr/bin/env bash
+DOMAIN=$(zenity --entry --text="Enter Domain")
+cd /opt/reconftw;./reconftw.sh -d $DOMAIN -a 
+
+#!/usr/bin/env bash
+DOMAIN=$(zenity --entry --text="Enter domain")
+cd /opt/Sn1per/
+./sniper -t $DOMAIN 
+thunar /usr/share/sniper/loot/
+
+#!/usr/bin/env bash
+spiderfoot -l 127.0.0.1:5001 &
+sleep 3
+firefox http://127.0.0.1:5001
+
+#!/usr/bin/env bash
+cd /root/Desktop/opt/TIDoS/
+python3 tidv2
+
+#!/usr/bin/env bash
+cd /root/Cases/Maigret/
+NICKNAME1=$(zenity --entry --text="Enter NickName-1")
+NICKNAME2=$(zenity --entry --text="Enter NickName-2")
+NICKNAME3=$(zenity --entry --text="Enter NickName-3")
+maigret $NICKNAME1 $NICKNAME2 $NICKNAME3 -a -b -T   
+thunar /root/Cases/Maigret/
