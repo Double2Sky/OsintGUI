@@ -40,3 +40,14 @@ NICKNAME2=$(zenity --entry --text="Enter NickName-2")
 NICKNAME3=$(zenity --entry --text="Enter NickName-3")
 maigret $NICKNAME1 $NICKNAME2 $NICKNAME3 -a -b -T   
 thunar /root/Cases/Maigret/
+
+                        
+#!/usr/bin/env bash
+DOMAIN=$(zenity --entry --text="Enter Domain")
+cd /root/reconftw;./reconftw.sh -d $DOMAIN -a 
+thunar /root/reconftw/Recon/$DOMAIN
+# This script locate /usr/local/bin/reconftw
+# reconftw in /root/reconftw
+# Tools in /root/Tools
+# To open qterminal and enter $ reconftw
+
