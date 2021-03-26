@@ -10,3 +10,4 @@ cd /root/Cases/Nickname/$NICKNAME
 			sleep 5
 			search4 -u $NICKNAME | tee -a output.txt
 				thunar /root/Cases/Nickname/$NICKNAME
+					/opt/scriptnOsint/osint -u $NICKNAME
