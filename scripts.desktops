@@ -30,6 +30,10 @@ cd /root/Desktop/opt/TIDoS/
 python3 tidv2
 
 #!/usr/bin/env bash
+DOMAIN=$(zenity --entry --text="Enter Domain")
+arachnid -f all -t high --aggressive -R $DOMAIN
+
+#!/usr/bin/env bash
 cd /root/Cases/Maigret/
 NICKNAME1=$(zenity --entry --text="Enter NickName-1")
 NICKNAME2=$(zenity --entry --text="Enter NickName-2")
