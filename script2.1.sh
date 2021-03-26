@@ -26,7 +26,7 @@ domain=$(zenity --entry --title "Domain / subdomains / emails" --text "Enter tar
 										sleep 1				
 										midori /root/Cases/$domain/$timestamp-$domain.html
 										sleep 1
-										thunar "/root/Cases/$domain" >/dev/null 2>&1
+										thunar /root/Cases/$domain >/dev/null 2>&1
 											sleep 1
 											arachnid http://$domain
 									
