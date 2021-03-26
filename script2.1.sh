@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 ##Domain Interact Menu Script
 timestamp=$(date +%Y-%m-%d:%H:%M)
 domain=$(zenity --entry --title "Domain / subdomains / emails" --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
