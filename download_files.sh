@@ -14,7 +14,7 @@ DOMAIN=$(zenity --entry --title "Metagoofil" --text="Enter Domain" --entry-text 
 	mkdir deluxe				
 		python3 /opt/deluxe/deluxe.py search -d $DOMAIN -n 200 -o /root/Cases/Download_Files/$DOMAIN/deluxe/
 		sleep 5
-		python3 /opt/deluxe/deluxe.py extract -m /root/Cases/Download_Files/$DOMAIN/deluxe/manifest.json -o /root/Cases/Download_Files/$DOMAIN/deluxe/metadata.txt  
+		python3 /opt/deluxe/deluxe.py extract -m /root/Cases/Download_Files/$DOMAIN/deluxe/manifest.json -o /root/Cases/Download_Files/$DOMAIN/metadata2.txt  
 		sleep 30		
 	mkdir pymeta
 		pymeta -d $DOMAIN -s all -m 50 -j 5 -o /root/Cases/Download_Files/$DOMAIN/pymeta/
