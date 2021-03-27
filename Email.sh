@@ -12,4 +12,6 @@ cd /root/Cases/Email/$EMAIL
 				sleep 3
 				python3 /opt/OSINT-SPY/osint-spy.py --email $EMAIL | tee -a output2.txt
 					sleep 3
-					/opt/scriptnOsint/osint -e $EMAIL
+					thunar "/root/Cases/Email/$EMAIL"
+						sleep 3
+						/opt/scriptnOsint/osint -e $EMAIL
