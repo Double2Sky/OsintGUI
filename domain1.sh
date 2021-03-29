@@ -21,7 +21,7 @@ cd /root/Cases/$domain
     	whois $domain >> Resume_$domain.txt
     	photon -u $domain -l 3 -t 100 -o /root/Cases/$domain/photon_$domain.txt >> Resume_$domain.txt
     	sublist3r -d $domain -o /root/Cases/$domain/sublist3r_$domain.txt >> Resume_$domain.txt
-    	gospider -s http://mybox.ru -o /root/Cases/$domain --sitemap -a -w -r -v 
+    	gospider -s http://mybox.ru -o /root/Cases/$domain --sitemap -a -w -r -v >> Resume_$domain.txt
     	goofile -d $domain -f txt >> Resume_$domain.txt
     	goofile -d $domain -f pdf >> Resume_$domain.txt
     	goofile -d $domain -f doc >> Resume_$domain.txt
