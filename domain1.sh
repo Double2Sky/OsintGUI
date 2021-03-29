@@ -9,7 +9,6 @@ if [ $domain != '' ]
  then
 mkdir /root/Cases/$domain
 cd /root/Cases/$domain
-    	theHarvester -d $domain -b baidu,bing,google,yahoo,virustotal,certspotter,crtsh,dnsdumpster,duckduckgo,exalead,hackertarget,intelx,hunter,netcraft,otx,pentesttools,projectdiscovery,qwant,rapiddns,securityTrails,sublist3r,threatcrowd,threatminer,trello,twitter,urlscan -f Resume_$domain.html
     	dmitry -wise $domain >> Resume_$domain.txt
     	nslookup www.$domain >> Resume_$domain.txt
        	dig authority $domain >> Resume_$domain.txt
@@ -21,6 +20,10 @@ cd /root/Cases/$domain
     	whois $domain >> Resume_$domain.txt
     	photon -u $domain -l 3 -t 100 -o /root/Cases/$domain/photon_$domain.txt >> Resume_$domain.txt
     	sublist3r -d $domain -o /root/Cases/$domain/sublist3r_$domain.txt >> Resume_$domain.txt
+    	python3 /opt/gasmask/gasmask.py -d $domain -i vhosts,google,bing,yahoo,ask,dogpile,twitter,youtube,reddit,github,instagram,crt,pgp,netcraft,virustotal,dnsdump,spyse >> Resume_$domain.txt
+    	theHarvester -d $domain -b baidu,bing,google,yahoo,virustotal,certspotter,crtsh,dnsdumpster,duckduckgo,exalead,hackertarget,intelx,hunter,netcraft,otx,pentesttools,projectdiscovery,qwant,rapiddns,securityTrails,sublist3r,threatcrowd,threatminer,trello,twitter,urlscan -f Resume_$domain.html
+    	python3 /opt/OSINT-SPY/osint-spy.py --domain $domain >> Resume_$domain.txt
+    	getallurls $domain >> Resume_$domain.txt
     	gospider -s http://mybox.ru -o /root/Cases/$domain --sitemap -a -w -r -v >> Resume_$domain.txt
     	goofile -d $domain -f txt >> Resume_$domain.txt
     	goofile -d $domain -f pdf >> Resume_$domain.txt
@@ -28,9 +31,7 @@ cd /root/Cases/$domain
     	goofile -d $domain -f docx >> Resume_$domain.txt
     	goofile -d $domain -f xls >> Resume_$domain.txt
     	goofile -d $domain -f xlsx >> Resume_$domain.txt
-    	mv *.txt resultado
-	mv *.html resultado
-	mv *.xml resultado
+    	
 else 
   echo 'Error! Please enter a domain.'
 fi
