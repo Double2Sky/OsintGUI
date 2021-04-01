@@ -31,7 +31,7 @@ cd /root/Cases/$domain
     	echo "getallurls"
     	getallurls $domain
     	echo "gospider"
-    	gospider -s http://mybox.ru --sitemap -a -w -r -v 
+    	gospider -s http://$domain --sitemap -a -w -r -v 
     	echo "goofile"
     	goofile -d $domain -f txt 
     	goofile -d $domain -f pdf 
