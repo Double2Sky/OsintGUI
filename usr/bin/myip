@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+IP=$(curl ident.me)
+whois $IP
+echo $IP
