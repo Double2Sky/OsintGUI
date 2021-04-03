@@ -9,6 +9,6 @@ cd /root/Cases/$domain
 		firefox /root/Cases/$domain/$domain.html
 			sleep 3
 			finalrecon --full http://$domain -o /root/Cases/$domain/$domain.fn
-			gedit /root/Cases/$domain/$domain.fn.output
+			gedit /root/Cases/$domain/$domain.fn
 sleep 3
 thunar /root/Cases/$domain/
