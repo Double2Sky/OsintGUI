@@ -9,5 +9,8 @@ cd /root/Cases/Nickname/$NICKNAME
 		Investigo $NICKNAME -s -d
 			sleep 5
 			search4 -u $NICKNAME | tee -a output.txt
-				thunar /root/Cases/Nickname/$NICKNAME
-					/opt/scriptnOsint/osint -u $NICKNAME
+				sleep 5
+				cd /opt/snoop
+				python3 snoop.py -t 9 -f $NICKNAME 
+					thunar /root/Cases/Nickname/$NICKNAME
+						/opt/scriptnOsint/osint -u $NICKNAME
