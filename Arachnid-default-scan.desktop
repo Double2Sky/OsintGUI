@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Arachnid-default-scan
+Comment=
+Exec=bash-wrapper '/root/Scripts/arachniddefault.sh'
+Icon=/root/Pictures/icons/arachnid-logo.png
+Path=
+Terminal=true
+StartupNotify=false
