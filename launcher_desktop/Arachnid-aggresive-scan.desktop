@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Arachnid-aggresive-scan
+Comment=
+Exec=bash-wrapper '/root/Scripts/arachnidagressive.sh'
+Icon=/root/Pictures/icons/arachnid-logo.png
+Path=
+Terminal=true
+StartupNotify=false
