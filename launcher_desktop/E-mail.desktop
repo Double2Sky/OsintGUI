@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=E-mail
+Comment=
+Exec=bash-wrapper '/root/Scripts/email.sh'
+Icon=applications-email-panel
+Path=
+Terminal=true
+StartupNotify=false
