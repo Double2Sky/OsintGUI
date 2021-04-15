@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Download-Site
+Comment=
+Exec=bash-wrapper '/root/Scripts/downloadsite.sh'
+Icon=state-download
+Path=
+Terminal=true
+StartupNotify=false
