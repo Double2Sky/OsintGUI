@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Nickname
+Comment=
+Exec=bash-wrapper '/root/Scripts/nickname.sh'
+Icon=username-copy
+Path=
+Terminal=true
+StartupNotify=false
