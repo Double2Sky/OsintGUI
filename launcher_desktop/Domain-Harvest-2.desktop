@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Domain-Harvest-2
+Comment=
+Exec=bash-wrapper '/root/Scripts/domainharvestinfo2.sh'
+Icon=account-update-online
+Path=
+Terminal=true
+StartupNotify=false
