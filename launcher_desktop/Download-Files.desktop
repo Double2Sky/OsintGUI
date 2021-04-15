@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Download-Files
+Comment=
+Exec=bash-wrapper '/root/Scripts/downloadfiles.sh'
+Icon=edit-download
+Path=
+Terminal=true
+StartupNotify=false
