@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Domain-Harvest-1
+Comment=
+Exec=bash-wrapper '/root/Scripts/domainharvestinfo.sh'
+Icon=emblem-web
+Path=
+Terminal=true
+StartupNotify=false
