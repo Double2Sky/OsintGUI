@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wayback
+Comment=
+Exec=bash-wrapper '/root/Scripts/wayback.sh'
+Icon=edit-undo-history
+Path=
+Terminal=true
+StartupNotify=false
