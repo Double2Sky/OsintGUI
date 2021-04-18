@@ -1,0 +1,142 @@
+f_github () {
+    # Updating Github apps
+    (
+        echo "5" ; cd /opt/badKarma; git pull 2>/dev/null
+        echo "# Updating badKarma"
+        echo "8" ; cd /opt/anonsurf_GUI; git pull 2>/dev/null
+        echo "# Updating anonsurf_GUI"
+        echo "10" ; cd /opt/buster; git pull 2>/dev/null
+        echo "# Updating buster"
+        sleep 3
+        echo "20" ; cd /opt/Infoga; git pull 2>/dev/null
+        echo "# Updating Infoga"
+        echo "23" ; cd /opt/cignotrack; git pull 2>/dev/null
+        echo "# Updating cignotrack"
+        echo "27" ; cd /opt/deluxe; git pull 2>/dev/null
+        echo "# Updating deluxe"
+        sleep 3
+        echo "33" ; cd /opt/DNSkron; git pull 2>/dev/null
+        echo "# Updating DNSkron"
+        echo "37" ; cd /opt/evine; git pull 2>/dev/null
+        echo "# Updating evine"
+        echo "40" ; cd /opt/cignotrack; git pull 2>/dev/null
+        echo "# Updating cignotrack"
+        sleep 3
+        echo "50" ; cd /opt/GhostRecon; git pull 2>/dev/null
+        echo "# Updating GhostRecon"
+        echo "53" ; cd /opt/GHunt; git pull 2>/dev/null
+        echo "# Updating GHunt"
+        sleep 3
+        echo "57" ; cd /opt/goca; git pull 2>/dev/null
+        echo "# Updating goca;"
+        echo "60" ; cd /opt/Goohak; git pull 2>/dev/null
+        echo "# Updating Goohak"
+        echo "63" ; cd /opt/Gorecon; git pull 2>/dev/null
+        echo "# Updating Gorecon"
+        echo "70" ; cd /opt/holehe; git pull 2>/dev/null
+        echo "# Updating holehe"
+        sleep 3
+        echo "73" ; cd /opt/iKy; git pull 2>/dev/null
+        echo "# Updating iKy"
+        echo "77" ; cd /opt/Maryam; git pull 2>/dev/null
+        echo "# Updating maryam"
+        echo "78" ; cd /opt/InfoSploit; git pull 2>/dev/null
+        echo "# Updating InfoSploit"
+        echo "79" ; cd /opt/Investigo; git pull 2>/dev/null
+        echo "# Updating Investigo"
+        sleep 3
+        echo "80" ; cd /opt/PhoneInfoga; git pull 2>/dev/null
+        echo "# Updating PhoneInfoga"
+        echo "81" ; cd /opt/Katana; git pull 2>/dev/null
+        echo "# Updating Katana"
+        echo "82" ; cd /opt/lazyGrandma; git pull 2>/dev/null
+        echo "# Updating lazyGrandma"
+        echo "83" ; cd /opt/lulzbuster; git pull 2>/dev/null
+        echo "# Updating lulzbuster"
+        echo "84" ; cd /opt/Metaforge; git pull 2>/dev/null
+        echo "# Updating Metaforge"
+        sleep 3
+        echo "85" ; cd /opt/mosint; git pull 2>/dev/null
+        echo "# Updating mosint"  
+        echo "86" ; cd /opt/Namechk; git pull 2>/dev/null
+        echo "# Updating Namechk" 
+        echo "87" ; cd /opt/NicknameFinder; git pull 2>/dev/null
+        echo "# Updating NicknameFinder" 
+        sleep 3
+        echo "88" ; cd /opt/nullinux; git pull 2>/dev/null
+        echo "# Updating nullinux" 
+        echo "89" ; cd /opt/nullscan; git pull 2>/dev/null
+        echo "# Updating nullscan" 
+        echo "90" ; cd /opt/OneForAll; git pull 2>/dev/null
+        echo "# Updating OneForAll" 
+        sleep 3
+        echo "91" ; cd /opt/OSINT-SPY; git pull 2>/dev/null
+        echo "# Updating OSINT-SPY" 
+        echo "92" ; cd /opt/pidrila; git pull 2>/dev/null
+        echo "# Updating pidrila" 
+        echo "93" ; cd /opt/reconspider; git pull 2>/dev/null
+        echo "# Updating reconspider" 
+        sleep 3
+        echo "94" ; cd /opt/RED_HAWK; git pull 2>/dev/null
+        echo "# Updating RED_HAWK" 
+        echo "95" ; cd /opt/scriptnOsint; git pull 2>/dev/null
+        echo "# Updating scriptnOsint" 
+        echo "96" ; cd /opt/Search4; git pull 2>/dev/null
+        echo "# Updating Search4" 
+        echo "97" ; cd /opt/serenity; git pull 2>/dev/null
+        echo "# Updating serenity" 
+        sleep 3
+        echo "98" ; cd /opt/SiteBroker; git pull 2>/dev/null
+        echo "# Updating SiteBroker" 
+        echo "99" ; cd /opt/social-analyzer; git pull 2>/dev/null
+        echo "# Updating social-analyzer" 
+        echo "99" ; cd /opt/SocialRecon; git pull 2>/dev/null
+        echo "# Updating SocialRecon"  
+        echo "99" ; cd /opt/Spiderpig; git pull 2>/dev/null
+        echo "# Updating Spiderpig" 
+        sleep 3
+        echo "99" ; cd /opt/Striker; git pull 2>/dev/null
+        echo "# Updating Striker" 
+        echo "99" ; cd /opt/TIDoS-Framework; git pull 2>/dev/null
+        echo "# Updating TIDoS-Framework" 
+        echo "99" ; cd /opt/uDork; git pull 2>/dev/null
+        echo "# Updating uDork" 
+        sleep 3
+        echo "99" ; cd /opt/URLextractor; git pull 2>/dev/null
+        echo "# Updating URLextractor" 
+        echo "99" ; cd /opt/vault; git pull 2>/dev/null
+        echo "# Updating vault" 
+        echo "99" ; cd /opt/waybackpack; git pull 2>/dev/null
+        echo "# Updating waybackpack" 
+        sleep 3
+        echo "99" ; cd /opt/WhatsMyName; git pull 2>/dev/null
+        echo "# Updating WhatsMyName"
+        echo "99" ; cd /opt/WikiLeaker; git pull 2>/dev/null
+        echo "# Updating WikiLeaker"
+        sleep 3
+        echo "99" ; cd /opt/YaSeeker; git pull 2>/dev/null
+        echo "# Updating YaSeeker"
+        echo "99" ; cd /opt/gasmask; git pull 2>/dev/null
+        echo "# Updating gasmask"
+        echo "100"
+    ) 
+}
+f_github
+
+pip3 install --upgrade pip
+pip3 install --upgrade arachnid-spider
+pip3 install --upgrade buster
+pip3 install --upgrade docker-compose
+pip3 install --upgrade dscan
+pip3 install --upgrade h8mail
+pip3 install --upgrade holehe
+pip3 install --upgrade infoga
+pip3 install --upgrade maigret
+pip3 install --upgrade R3con1z3r
+pip3 install --upgrade raccoon-scanner 
+pip3 install --upgrade ReconSpider
+pip3 install --upgrade search4
+pip3 install --upgrade socialscan
+pip3 install --upgrade twint
+pip3 install --upgrade wapiti3
+pip3 install --upgrade waybackpack
