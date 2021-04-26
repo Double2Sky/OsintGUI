@@ -22,7 +22,7 @@ sudo apt install -y
 sudo apt install -y 
 
 python3 -m pip install osrframework --upgrade
-python3 -m pip install  h8mail --upgrade
+python3 -m pip install h8mail --upgrade
 python3 -m pip install arachnid-spider==0.9.4
 
 export GO111MODULE=on
@@ -55,7 +55,6 @@ sudo pip3 install ~/Programs/maigret/.
 git clone https://github.com/megadose/holehe.git ~/Programs/holehe
 cd ~/Programs/holehe && sudo python3 setup.py install
 cd
-
 
 git clone https://github.com/thewhiteh4t/FinalRecon ~/Programs/FinalRecon
 sudo -H pip3 install -r  ~/Programs/FinalRecon/requirements.txt
@@ -98,6 +97,21 @@ git clone https://github.com/saeeddhqan/evine ~/Programs/evine
 git clone https://github.com/1N3/Goohak ~/Programs/Goohak
 
 git clone https://github.com/qeeqbox/social-analyzer ~/Programs/social-analyzer
+
+git clone https://github.com/Quantika14/email-osint-ripper ~/Programs/email-osint-ripper
+
+git clone https://github.com/maurosoria/dirsearch ~/Programs/dirsearch
+
+git clone https://github.com/ScriptnKitten/scriptnOsint ~/Programs/scriptnOsint
+
+
+
+
+
+
+
+
+
 
 
 git clone https://github.com/CybernetiX-S3C/InfoSploit &&
@@ -148,7 +162,7 @@ git clone https://github.com/r3vn/badKarma &&
 &&
 git clone https://github.com/twelvesec/gasmask &&
 git clone https://github.com/jcesarstef/seosint &&
-git clone https://github.com/ScriptnKitten/scriptnOsint &&
+ &&
 git clone https://github.com/Shiva108/OSIRA &&
  &&
 git clone https://github.com/adnane-X-tebbaa/Katana &&
@@ -157,12 +171,12 @@ git clone https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan &&
 git clone https://github.com/SharadKumar97/OSINT-SPY &&
 git clone https://github.com/GerbenJavado/LinkFinder &&
 git clone https://github.com/eescanilla/OSINTBashKALI &&
-git clone https://github.com/radenvodka/Recsech&&
+git clone https://github.com/radenvodka/Recsech &&
 git clone https://github.com/woj-ciech/LeakLooker-X &&
  &&
-git clone https://github.com/maurosoria/dirsearch &&
+&&
 git clone https://github.com/ThomasPWy/drwho.sh &&
-git clone https://github.com/Quantika14/email-osint-ripper 
+
 
 
 
