@@ -29,7 +29,7 @@ export GO111MODULE=on
 
 
 
-git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs 
+git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs/anonsurf_GUI 
 sudo chmod +x ~/Programs/anonsurf_GUI/install.sh
 sudo bash ~/Programs/anonsurf_GUI/install.sh
 
@@ -46,7 +46,7 @@ sudo -H pip3 install -r ~/Programs/metagoofil/requirements.txt
 git clone https://github.com/sherlock-project/sherlock.git ~/Programs/sherlock
 python3 -m pip install -r ~/Programs/sherlock/requirements.txt
 
-git clone https://github.com/smicallef/spiderfoot.git ~/Downloads/Programs/spiderfoot
+git clone https://github.com/smicallef/spiderfoot.git ~/Programs/spiderfoot
 sudo -H pip3 install -r ~/Programs/spiderfoot/requirements.txt
 
 git clone https://github.com/soxoj/maigret ~/Programs/maigret
@@ -73,15 +73,39 @@ sudo -H pip3 install -r ~/Programs/twint/requirements.txt
 
 git clone https://github.com/six2dez/reconftw ~/Programs/reconftw
 
+git clone https://github.com/AhmedConstant/lazyGrandma ~/Programs/lazyGrandma
+
+git clone https://github.com/GeneralTesler/deluxe ~/Programs/deluxe
+
+git clone https://github.com/tdh8316/Investigo ~/Programs/Investigo
+
+git clone https://github.com/jsvine/waybackpack ~/Programs/waybackpack
+
+git clone https://github.com/0xknown/Search4 ~/Programs/Search4
+
+git clone https://github.com/m1n64/MagmaOsint ~/Programs/MagmaOsint
+
+git clone https://github.com/noptrix/lulzbuster ~/Programs/lulzbuster
+
+git clone https://github.com/sham00n/buster ~/Programs/buster
+
+git clone https://github.com/sundowndev/PhoneInfoga ~/Programs/PhoneInfoga
+
+git clone https://github.com/0xInfection/TIDoS-Framework ~/Programs/TIDoS-Framework
+
+git clone https://github.com/saeeddhqan/evine ~/Programs/evine
+
+git clone https://github.com/1N3/Goohak ~/Programs/Goohak
+
+git clone https://github.com/qeeqbox/social-analyzer ~/Programs/social-analyzer
 
 
-git clone https://github.com/HowToFind-bot/YaSeeker &&
 git clone https://github.com/CybernetiX-S3C/InfoSploit &&
 git clone https://github.com/alpkeskin/mosint &&
 git clone https://github.com/Double2Sky/GhostRecon &&
 git clone https://github.com/m3n0sd0n4ld/uDork &&
-git clone https://github.com/tdh8316/Investigo &&
-git clone https://github.com/jsvine/waybackpack &&
+ &&
+&&
 git clone https://github.com/enemy-submarine/pidrila &&
 git clone https://github.com/DedSecInside/TorBot &&
 git clone https://github.com/WebBreacher/WhatsMyName &&
@@ -90,8 +114,8 @@ git clone https://github.com/kpcyrd/sn0int &&
 git clone https://github.com/abhisharma404/vault &&
 git clone https://github.com/HA71/Namechk &&
 git clone https://github.com/mxrch/GHunt &&
-git clone https://github.com/AhmedConstant/lazyGrandma &&
-git clone https://github.com/0xknown/Search4 &&
+ &&
+ &&
 git clone https://github.com/Zarcolio/sitedorks &&
 git clone https://github.com/Ekultek/WhatBreach &&
 git clone https://github.com/chriswmorris/Metaforge &&
@@ -100,33 +124,33 @@ git clone https://github.com/s0md3v/Striker &&
 git clone https://github.com/gocaio/goca &&
 git clone https://github.com/bhavsec/reconspider &&
 git clone https://github.com/vysecurity/autovpn &&
-git clone https://github.com/GeneralTesler/deluxe &&
+ &&
 git clone https://github.com/eschultze/URLextractor &&
 git clone https://github.com/devanshbatham/Gorecon &&
-git clone https://github.com/m1n64/MagmaOsint &&
+ &&
 git clone https://github.com/Anon-Exploiter/SiteBroker &&
 git clone https://github.com/abaykan/53R3N17Y &&
-git clone https://github.com/sundowndev/PhoneInfoga &&
+ &&
 git clone https://github.com/restanse/NicknameFinder &&
 git clone https://github.com/shmilylty/OneForAll &&
 git clone https://github.com/m4ll0k/Infoga &&
-git clone https://github.com/saeeddhqan/evine &&
-git clone https://github.com/noptrix/lulzbuster &&
+ &&
+ &&
 git clone https://github.com/Cignoraptor-ita/cignotrack &&
-git clone https://github.com/0xInfection/TIDoS-Framework &&
-git clone https://github.com/megadose/holehe &&
+&&
+&&
 git clone https://github.com/kennbroorg/iKy &&
-git clone https://github.com/sham00n/buster &&
+&&
 git clone https://github.com/jocephus/WikiLeaker &&
 git clone https://github.com/hatlord/Spiderpig &&
 git clone https://github.com/m8r0wn/nullinux &&
 git clone https://github.com/r3vn/badKarma &&
-git clone https://github.com/1N3/Goohak &&
+&&
 git clone https://github.com/twelvesec/gasmask &&
 git clone https://github.com/jcesarstef/seosint &&
 git clone https://github.com/ScriptnKitten/scriptnOsint &&
 git clone https://github.com/Shiva108/OSIRA &&
-git clone https://github.com/qeeqbox/social-analyzer &&
+ &&
 git clone https://github.com/adnane-X-tebbaa/Katana &&
 git clone https://github.com/Tuhinshubhra/RED_HAWK &&
 git clone https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan &&
@@ -135,7 +159,7 @@ git clone https://github.com/GerbenJavado/LinkFinder &&
 git clone https://github.com/eescanilla/OSINTBashKALI &&
 git clone https://github.com/radenvodka/Recsech&&
 git clone https://github.com/woj-ciech/LeakLooker-X &&
-git clone https://github.com/m8r0wn/pymeta &&
+ &&
 git clone https://github.com/maurosoria/dirsearch &&
 git clone https://github.com/ThomasPWy/drwho.sh &&
 git clone https://github.com/Quantika14/email-osint-ripper 
