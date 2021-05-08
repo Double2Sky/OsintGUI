@@ -132,7 +132,7 @@ git clone https://github.com/snooppr/snoop ~/Programs/snoop
 
 git clone https://github.com/megadose/OnionSearch ~/Programs/OnionSearch
 
- clone https://github.com/woj-ciech/LeakLooker-X ~/Programs/LeakLooker-X
+git clone https://github.com/woj-ciech/LeakLooker-X ~/Programs/LeakLooker-X
 
 git clone https://github.com/GerbenJavado/gainder ~/Programs/LinkFinder
 
@@ -148,10 +148,10 @@ git clone https://github.com/Cignoraptor-ita/cignotrack ~/Program/cignotrack
 
 git clone https://github.com/eschultze/URLextractor ~/Program/URLextractor
 
-
-
-
-
+git clone https://github.com/laramies/theHarvester.git ~/Programs/theHarvester
+cd ~/Programs/theHarvester
+git checkout 8b88a66
+sudo -H pip3 install -r requirements.txt
 
 
 git clone https://github.com/CybernetiX-S3C/InfoSploit &&
