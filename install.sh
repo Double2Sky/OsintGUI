@@ -19,23 +19,53 @@ sudo apt install -y zsh
 sudo apt install -y docker-compose
 sudo apt install -y webhttrack
 sudo apt install -y libimage-exiftool-perl
-
 sudo apt install -y maltego
+sudo apt install -y dirbuster
+sudo apt install -y chromium
+sudo apt install -y dmitry
+sudo apt install -y docker-compose
+sudo apt install -y exif
+sudo apt install -y exifprobe
+sudo apt install -y getallurls
+sudo apt install -y gitleaks
+sudo apt install -y konsole
+sudo apt install -y mat2
+sudo apt install -y mc
+sudo apt install -y mediainfo-gui
+sudo apt install -y Sublist3r
+sudo apt install -y Photon
+sudo apt install -y metagoofil
+sudo apt install -y sherlock
+sudo apt install -y spiderfoot
+sudo apt install -y midori
+sudo apt install -y osrframework
+sudo apt install -y python3-all
+sudo apt install -y stacer
+sudo apt install -y htop
+sudo apt install -y theHarvester
+sudo apt install -y webhttrach httrack
+sudo apt install -y eyewitness
+sudo apt install -y whatweb
+sudo apt install -y wig
+sudo apt install -y sslyze
+sudo apt install -y dirb
+sudo apt install -y dirbuster
 sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y 
-sudo apt install -y 
-sudo apt install -y 
-sudo apt install -y 
-sudo apt install -y 
-sudo apt install -y 
+sudo apt install -y
+sudo apt install -y
+sudo apt install -y
+
+
+
 
 
 sudo apt install -y snapd gnome-software-plugin-snap
 sudo systemctl enable --now snapd apparmor
 sudo snap install --classic riseup-vpn
 sudo snap install --candidate vscode
-sudo snap install amass
+
 
 
 python3 -m pip install osrframework --upgrade
@@ -45,7 +75,7 @@ python3 -m pip install Instalooter
 python3 -m pip install Instaloader
 python3 -m pip install raccoon-scanner
 python3 -m pip install r3con1z3r
-python3 -m pip install osrframework
+python3 -m pip install 
 python3 -m pip install socialscan
 python3 -m pip install
 
@@ -53,25 +83,25 @@ export GO111MODULE=on
 
 
 
-git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs/anonsurf_GUI 
-sudo chmod +x ~/Programs/anonsurf_GUI/install.sh
-sudo bash ~/Programs/anonsurf_GUI/install.sh
+#git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs/anonsurf_GUI 
+#sudo chmod +x ~/Programs/anonsurf_GUI/install.sh
+#sudo bash ~/Programs/anonsurf_GUI/install.sh
 
-git clone https://github.com/aboul3la/Sublist3r.git ~/Programs/Sublist3r
-sudo -H pip3 install -r ~/Programs/Sublist3r/requirements.txt
+#git clone https://github.com/aboul3la/Sublist3r.git ~/Programs/Sublist3r
+#sudo -H pip3 install -r ~/Programs/Sublist3r/requirements.txt
 
-git clone https://github.com/s0md3v/Photon.git ~/Programs/Photon
-sudo -H pip3 install -r ~/Programs/Photon/requirements.txt
+#git clone https://github.com/s0md3v/Photon.git ~/Programs/Photon
+#sudo -H pip3 install -r ~/Programs/Photon/requirements.txt
 
-git clone https://github.com/opsdisk/metagoofil.git ~/Programs/metagoofil
-sudo -H pip3 install -r ~/Programs/metagoofil/requirements.txt
+#git clone https://github.com/opsdisk/metagoofil.git ~/Programs/metagoofil
+#sudo -H pip3 install -r ~/Programs/metagoofil/requirements.txt
 
 
-git clone https://github.com/sherlock-project/sherlock.git ~/Programs/sherlock
-python3 -m pip install -r ~/Programs/sherlock/requirements.txt
+#git clone https://github.com/sherlock-project/sherlock.git ~/Programs/sherlock
+#python3 -m pip install -r ~/Programs/sherlock/requirements.txt
 
-git clone https://github.com/smicallef/spiderfoot.git ~/Programs/spiderfoot
-sudo -H pip3 install -r ~/Programs/spiderfoot/requirements.txt
+#git clone https://github.com/smicallef/spiderfoot.git ~/Programs/spiderfoot
+#sudo -H pip3 install -r ~/Programs/spiderfoot/requirements.txt
 
 git clone https://github.com/soxoj/maigret ~/Programs/maigret
 sudo pip3 install ~/Programs/maigret/.
@@ -80,14 +110,14 @@ git clone https://github.com/megadose/holehe.git ~/Programs/holehe
 cd ~/Programs/holehe && sudo python3 setup.py install
 cd
 
-git clone https://github.com/thewhiteh4t/FinalRecon ~/Programs/FinalRecon
-sudo -H pip3 install -r  ~/Programs/FinalRecon/requirements.txt
+#git clone https://github.com/thewhiteh4t/FinalRecon ~/Programs/FinalRecon
+#sudo -H pip3 install -r  ~/Programs/FinalRecon/requirements.txt
 
 git clone https://github.com/m8r0wn/pymeta ~/Programs/pymeta
 cd ~/Programs/pymeta && python3 setup.py install
-cd
 
-git clone https://github.com/HowToFind-bot/YaSeeker ~/Programs
+
+git clone https://github.com/HowToFind-bot/YaSeeker ~/Programs/YaSeeker
 sudo -H pip3 install -r ~/Programs/YaSeeker/requirements.txt
 
 git clone https://github.com/twintproject/twint.git ~/Programs/twint
