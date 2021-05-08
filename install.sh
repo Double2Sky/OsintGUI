@@ -15,15 +15,39 @@ sudo apt install -y net-tools
 sudo apt install -y ruby
 sudo apt install -y php
 sudo apt install -y torbrowser-launcher
+sudo apt install -y zsh
+sudo apt install -y docker-compose
+sudo apt install -y webhttrack
+sudo apt install -y libimage-exiftool-perl
+
+sudo apt install -y maltego
+sudo apt install -y 
+sudo apt install -y 
+sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y 
 
+
+sudo apt install -y snapd gnome-software-plugin-snap
+sudo systemctl enable --now snapd apparmor
+sudo snap install --classic riseup-vpn
+sudo snap install --candidate vscode
+sudo snap install amass
+
+
 python3 -m pip install osrframework --upgrade
 python3 -m pip install h8mail --upgrade
 python3 -m pip install arachnid-spider==0.9.4
+python3 -m pip install Instalooter
+python3 -m pip install Instaloader
+python3 -m pip install raccoon-scanner
+python3 -m pip install r3con1z3r
+python3 -m pip install osrframework
+python3 -m pip install socialscan
+python3 -m pip install
 
 export GO111MODULE=on
 
@@ -104,9 +128,25 @@ git clone https://github.com/maurosoria/dirsearch ~/Programs/dirsearch
 
 git clone https://github.com/ScriptnKitten/scriptnOsint ~/Programs/scriptnOsint
 
+git clone https://github.com/snooppr/snoop ~/Programs/snoop
 
+git clone https://github.com/megadose/OnionSearch ~/Programs/OnionSearch
 
+ clone https://github.com/woj-ciech/LeakLooker-X ~/Programs/LeakLooker-X
 
+git clone https://github.com/GerbenJavado/gainder ~/Programs/LinkFinder
+
+git clone https://github.com/qeeqbox/social-analyzer ~/Program/social-analyzer
+
+git clone https://github.com/twelvesec/gasmask ~/Program/gasmask
+
+git clone https://github.com/alpkeskin/mosint ~/Program/mosint
+
+git clone https://github.com/megadose/holehe ~/Program/holehe
+
+git clone https://github.com/Cignoraptor-ita/cignotrack ~/Program/cignotrack 
+
+git clone https://github.com/eschultze/URLextractor ~/Program/URLextractor
 
 
 
@@ -115,7 +155,7 @@ git clone https://github.com/ScriptnKitten/scriptnOsint ~/Programs/scriptnOsint
 
 
 git clone https://github.com/CybernetiX-S3C/InfoSploit &&
-git clone https://github.com/alpkeskin/mosint &&
+ &&
 git clone https://github.com/Double2Sky/GhostRecon &&
 git clone https://github.com/m3n0sd0n4ld/uDork &&
  &&
