@@ -50,7 +50,7 @@ sudo apt install -y wig
 sudo apt install -y sslyze
 sudo apt install -y dirb
 sudo apt install -y dirbuster
-sudo apt install -y 
+sudo apt install -y gem
 sudo apt install -y 
 sudo apt install -y 
 sudo apt install -y
@@ -65,6 +65,7 @@ sudo apt install -y snapd gnome-software-plugin-snap
 sudo systemctl enable --now snapd apparmor
 sudo snap install --classic riseup-vpn
 sudo snap install --candidate vscode
+sudo snap install --edge miro
 
 
 
@@ -80,8 +81,9 @@ python3 -m pip install socialscan
 python3 -m pip install
 
 export GO111MODULE=on
-
-
+GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+go get github.com/tomnomnom/waybackurls
+gem install wayback_machine_downloader
 
 #git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs/anonsurf_GUI 
 #sudo chmod +x ~/Programs/anonsurf_GUI/install.sh
@@ -178,10 +180,20 @@ git clone https://github.com/Cignoraptor-ita/cignotrack ~/Program/cignotrack
 
 git clone https://github.com/eschultze/URLextractor ~/Program/URLextractor
 
-git clone https://github.com/laramies/theHarvester.git ~/Programs/theHarvester
-cd ~/Programs/theHarvester
-git checkout 8b88a66
-sudo -H pip3 install -r requirements.txt
+git clone https://github.com/enemy-submarine/pidrila ~/Program/pidrila
+
+git clone https://github.com/WebBreacher/WhatsMyName ~/Program/WhatsMyName
+
+git clone https://github.com/HA71/Namechk ~/Program/Namechk
+
+git clone https://github.com/mxrch/GHunt ~/Program/GHunt
+
+git clone https://github.com/Zarcolio/sitedorks ~/Program/sitedorks
+
+#git clone https://github.com/laramies/theHarvester.git ~/Programs/theHarvester
+#cd ~/Programs/theHarvester
+#git checkout 8b88a66
+#sudo -H pip3 install -r requirements.txt
 
 
 git clone https://github.com/CybernetiX-S3C/InfoSploit &&
@@ -192,15 +204,15 @@ git clone https://github.com/m3n0sd0n4ld/uDork &&
 &&
 git clone https://github.com/enemy-submarine/pidrila &&
 git clone https://github.com/DedSecInside/TorBot &&
-git clone https://github.com/WebBreacher/WhatsMyName &&
+ &&
 git clone https://github.com/noptrix/nullscan &&
 git clone https://github.com/kpcyrd/sn0int &&
 git clone https://github.com/abhisharma404/vault &&
-git clone https://github.com/HA71/Namechk &&
-git clone https://github.com/mxrch/GHunt &&
+&&
  &&
  &&
-git clone https://github.com/Zarcolio/sitedorks &&
+ &&
+&&
 git clone https://github.com/Ekultek/WhatBreach &&
 git clone https://github.com/chriswmorris/Metaforge &&
 git clone https://github.com/saeeddhqan/Maryam &&
