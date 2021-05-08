@@ -78,7 +78,7 @@ python3 -m pip install raccoon-scanner
 python3 -m pip install r3con1z3r
 python3 -m pip install blackwidow
 python3 -m pip install socialscan
-python3 -m pip install
+python3 -m pip install xeuledoc
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
