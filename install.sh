@@ -80,7 +80,7 @@ pipx install blackwidow
 pipx install socialscan
 pipx install xeuledoc
 pipx install witnessme
-
+pipx install social-analyzer
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
