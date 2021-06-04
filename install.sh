@@ -51,8 +51,8 @@ sudo apt install -y sslyze
 sudo apt install -y dirb
 sudo apt install -y dirbuster
 sudo apt install -y gem
-sudo apt install -y 
-sudo apt install -y 
+sudo apt install -y yad
+sudo apt install -y python3-venv
 sudo apt install -y
 sudo apt install -y
 sudo apt install -y
@@ -68,130 +68,132 @@ sudo snap install --candidate vscode
 sudo snap install --edge miro
 
 
+python3 -m pip install pipx
+pipx install osrframework --upgrade
+pipx install h8mail --upgrade
+pipx install arachnid-spider==0.9.4
+pipx install Instalooter
+pipx install Instaloader
+pipx install raccoon-scanner
+pipx install r3con1z3r
+pipx install blackwidow
+pipx install socialscan
+pipx install xeuledoc
+pipx install witnessme
 
-python3 -m pip install osrframework --upgrade
-python3 -m pip install h8mail --upgrade
-python3 -m pip install arachnid-spider==0.9.4
-python3 -m pip install Instalooter
-python3 -m pip install Instaloader
-python3 -m pip install raccoon-scanner
-python3 -m pip install r3con1z3r
-python3 -m pip install blackwidow
-python3 -m pip install socialscan
-python3 -m pip install xeuledoc
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 go get github.com/tomnomnom/waybackurls
 gem install wayback_machine_downloader
 
-#git clone https://github.com/leohab75/anonsurf_GUI.git ~/Programs/anonsurf_GUI 
-#sudo chmod +x ~/Programs/anonsurf_GUI/install.sh
-#sudo bash ~/Programs/anonsurf_GUI/install.sh
+#git clone https://github.com/leohab75/anonsurf_GUI.git /opt/anonsurf_GUI 
+#sudo chmod +x /opt/anonsurf_GUI/install.sh
+#sudo bash /opt/anonsurf_GUI/install.sh
 
-#git clone https://github.com/aboul3la/Sublist3r.git ~/Programs/Sublist3r
-#sudo -H pip3 install -r ~/Programs/Sublist3r/requirements.txt
+#git clone https://github.com/aboul3la/Sublist3r.git /opt/Sublist3r
+#sudo -H pip3 install -r /opt/Sublist3r/requirements.txt
 
-#git clone https://github.com/s0md3v/Photon.git ~/Programs/Photon
-#sudo -H pip3 install -r ~/Programs/Photon/requirements.txt
+#git clone https://github.com/s0md3v/Photon.git /opt/Photon
+#sudo -H pip3 install -r /opt/Photon/requirements.txt
 
-#git clone https://github.com/opsdisk/metagoofil.git ~/Programs/metagoofil
-#sudo -H pip3 install -r ~/Programs/metagoofil/requirements.txt
+#git clone https://github.com/opsdisk/metagoofil.git /opt/metagoofil
+#sudo -H pip3 install -r /opt/metagoofil/requirements.txt
 
 
-#git clone https://github.com/sherlock-project/sherlock.git ~/Programs/sherlock
-#python3 -m pip install -r ~/Programs/sherlock/requirements.txt
+#git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
+#python3 -m pip install -r /opt/sherlock/requirements.txt
 
-#git clone https://github.com/smicallef/spiderfoot.git ~/Programs/spiderfoot
-#sudo -H pip3 install -r ~/Programs/spiderfoot/requirements.txt
+#git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
+#sudo -H pip3 install -r /opt/spiderfoot/requirements.txt
 
-git clone https://github.com/soxoj/maigret ~/Programs/maigret
-sudo pip3 install ~/Programs/maigret/.
+git clone https://github.com/soxoj/maigret /opt/maigret
+sudo pip3 install /opt/maigret/.
 
-git clone https://github.com/megadose/holehe.git ~/Programs/holehe
-cd ~/Programs/holehe && sudo python3 setup.py install
+git clone https://github.com/megadose/holehe.git /opt/holehe
+cd /opt/holehe && sudo python3 setup.py install
 cd
 
-#git clone https://github.com/thewhiteh4t/FinalRecon ~/Programs/FinalRecon
-#sudo -H pip3 install -r  ~/Programs/FinalRecon/requirements.txt
+#git clone https://github.com/thewhiteh4t/FinalRecon /opt/FinalRecon
+#sudo -H pip3 install -r  /opt/FinalRecon/requirements.txt
 
-git clone https://github.com/m8r0wn/pymeta ~/Programs/pymeta
-cd ~/Programs/pymeta && python3 setup.py install
+git clone https://github.com/m8r0wn/pymeta /opt/pymeta
+cd /opt/pymeta && python3 setup.py install
 
 
-git clone https://github.com/HowToFind-bot/YaSeeker ~/Programs/YaSeeker
-sudo -H pip3 install -r ~/Programs/YaSeeker/requirements.txt
+git clone https://github.com/HowToFind-bot/YaSeeker /opt/YaSeeker
+sudo -H pip3 install -r /opt/YaSeeker/requirements.txt
 
-git clone https://github.com/twintproject/twint.git ~/Programs/twint
-sudo -H pip3 install ~/Programs/twint
-sudo -H pip3 install -r ~/Programs/twint/requirements.txt
+git clone https://github.com/twintproject/twint.git /opt/twint
+sudo -H pip3 install /opt/twint
+sudo -H pip3 install -r /opt/twint/requirements.txt
 
-git clone https://github.com/six2dez/reconftw ~/Programs/reconftw
+git clone https://github.com/six2dez/reconftw /opt/reconftw
 
-git clone https://github.com/AhmedConstant/lazyGrandma ~/Programs/lazyGrandma
+git clone https://github.com/AhmedConstant/lazyGrandma /opt/lazyGrandma
 
-git clone https://github.com/GeneralTesler/deluxe ~/Programs/deluxe
+git clone https://github.com/GeneralTesler/deluxe /opt/deluxe
 
-git clone https://github.com/tdh8316/Investigo ~/Programs/Investigo
+git clone https://github.com/tdh8316/Investigo /opt/Investigo
 
-git clone https://github.com/jsvine/waybackpack ~/Programs/waybackpack
+git clone https://github.com/jsvine/waybackpack /opt/waybackpack
 
-git clone https://github.com/0xknown/Search4 ~/Programs/Search4
+git clone https://github.com/0xknown/Search4 /opt/Search4
 
-git clone https://github.com/m1n64/MagmaOsint ~/Programs/MagmaOsint
+git clone https://github.com/m1n64/MagmaOsint /opt/MagmaOsint
 
-git clone https://github.com/noptrix/lulzbuster ~/Programs/lulzbuster
+git clone https://github.com/noptrix/lulzbuster /opt/lulzbuster
 
-git clone https://github.com/sham00n/buster ~/Programs/buster
+git clone https://github.com/sham00n/buster /opt/buster
 
-git clone https://github.com/sundowndev/PhoneInfoga ~/Programs/PhoneInfoga
+git clone https://github.com/sundowndev/PhoneInfoga /opt/PhoneInfoga
 
-git clone https://github.com/0xInfection/TIDoS-Framework ~/Programs/TIDoS-Framework
+git clone https://github.com/0xInfection/TIDoS-Framework /opt/TIDoS-Framework
 
-git clone https://github.com/saeeddhqan/evine ~/Programs/evine
+git clone https://github.com/saeeddhqan/evine /opt/evine
 
-git clone https://github.com/1N3/Goohak ~/Programs/Goohak
+git clone https://github.com/1N3/Goohak /opt/Goohak
 
-git clone https://github.com/qeeqbox/social-analyzer ~/Programs/social-analyzer
+git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
 
-git clone https://github.com/Quantika14/email-osint-ripper ~/Programs/email-osint-ripper
+git clone https://github.com/Quantika14/email-osint-ripper /opt/email-osint-ripper
 
-git clone https://github.com/maurosoria/dirsearch ~/Programs/dirsearch
+git clone https://github.com/maurosoria/dirsearch /opt/dirsearch
 
-git clone https://github.com/ScriptnKitten/scriptnOsint ~/Programs/scriptnOsint
+git clone https://github.com/ScriptnKitten/scriptnOsint /opt/scriptnOsint
 
-git clone https://github.com/snooppr/snoop ~/Programs/snoop
+git clone https://github.com/snooppr/snoop /opt/snoop
 
-git clone https://github.com/megadose/OnionSearch ~/Programs/OnionSearch
+git clone https://github.com/megadose/OnionSearch /opt/OnionSearch
 
-git clone https://github.com/woj-ciech/LeakLooker-X ~/Programs/LeakLooker-X
+git clone https://github.com/woj-ciech/LeakLooker-X /opt/LeakLooker-X
 
-git clone https://github.com/GerbenJavado/gainder ~/Programs/LinkFinder
+git clone https://github.com/GerbenJavado/gainder /opt/LinkFinder
 
-git clone https://github.com/qeeqbox/social-analyzer ~/Program/social-analyzer
+git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
 
-git clone https://github.com/twelvesec/gasmask ~/Program/gasmask
+git clone https://github.com/twelvesec/gasmask /opt/gasmask
 
-git clone https://github.com/alpkeskin/mosint ~/Program/mosint
+git clone https://github.com/alpkeskin/mosint /opt/mosint
 
-git clone https://github.com/megadose/holehe ~/Program/holehe
+git clone https://github.com/megadose/holehe /opt/holehe
 
-git clone https://github.com/Cignoraptor-ita/cignotrack ~/Program/cignotrack 
+git clone https://github.com/Cignoraptor-ita/cignotrack /opt/cignotrack 
 
-git clone https://github.com/eschultze/URLextractor ~/Program/URLextractor
+git clone https://github.com/eschultze/URLextractor /opt/URLextractor
 
-git clone https://github.com/enemy-submarine/pidrila ~/Program/pidrila
+git clone https://github.com/enemy-submarine/pidrila /opt/pidrila
 
-git clone https://github.com/WebBreacher/WhatsMyName ~/Program/WhatsMyName
+git clone https://github.com/WebBreacher/WhatsMyName /opt/WhatsMyName
 
-git clone https://github.com/HA71/Namechk ~/Program/Namechk
+git clone https://github.com/HA71/Namechk /opt/Namechk
 
-git clone https://github.com/mxrch/GHunt ~/Program/GHunt
+git clone https://github.com/mxrch/GHunt /opt/GHunt
 
-git clone https://github.com/Zarcolio/sitedorks ~/Program/sitedorks
+git clone https://github.com/Zarcolio/sitedorks /opt/sitedorks
 
-#git clone https://github.com/laramies/theHarvester.git ~/Programs/theHarvester
-#cd ~/Programs/theHarvester
+#git clone https://github.com/laramies/theHarvester.git /opt/theHarvester
+#cd /opt/theHarvester
 #git checkout 8b88a66
 #sudo -H pip3 install -r requirements.txt
 
