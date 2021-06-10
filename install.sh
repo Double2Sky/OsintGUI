@@ -53,7 +53,7 @@ sudo apt install -y dirbuster
 sudo apt install -y gem
 sudo apt install -y yad
 sudo apt install -y python3-venv
-sudo apt install -y
+sudo apt install -y links2
 sudo apt install -y
 sudo apt install -y
 
