@@ -72,7 +72,7 @@ case $domainmenu in
 			if [[ $domain =~ $fqdnregex ]]; then
 				#Run Tool
 				mkdir /home/user/Cases/Photon/
-				photon -u $domain -l 3 -t 100 -o /home/user/Cases/Photon/$timestamp-$domain
+				photon -u $domain --wayback --clone --keys -l 3 -t 100 -o /home/user/Cases/Photon/$timestamp-$domain
 				sleep 3
 				thunar "/home/user/Cases/Photon/$timestamp-$domain" >/dev/null 2>&1
 				exit
