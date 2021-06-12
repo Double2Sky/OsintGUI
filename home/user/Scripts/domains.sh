@@ -90,7 +90,7 @@ case $domainmenu in
 				mkdir /home/user/Cases/theHarvester/
 				theHarvester -d $domain -b all -f /root/Cases/theHarvester/$timestamp-$domain.html
 				if [ -f /home/user/Cases/theHarvester/$timestamp-$domain.html  ]; then
-					firefox /home/user/Cases/theHarvester/$timestamp-$domain.html	
+					screen -d -m firefox /home/user/Cases/theHarvester/$timestamp-$domain.html	
 				fi	
 			else
 				zenity --error --text "Doesn't appear to be a legitimate domain, exiting!" 2> >(grep -v 'GtkDialog' >&2)
