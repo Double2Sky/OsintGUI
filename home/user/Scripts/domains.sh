@@ -8,11 +8,12 @@ opt2="Sublist3r"
 opt3="Photon"
 opt4="TheHarvester"
 opt5="De-Cloud"
+opt6="Get Links"
 
 timestamp=$(date +%Y-%m-%d:%H:%M)
 fqdnregex="\b((xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}\b"
 
-domainmenu=$(zenity  --list  --title "Domain Tool" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" 2> >(grep -v 'GtkDialog' >&2)) 
+domainmenu=$(zenity  --list  --title "Domain Tool" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" FALSE "$opt6" 2> >(grep -v 'GtkDialog' >&2)) 
 
 case $domainmenu in
 	$opt1 ) #Amass
@@ -115,17 +116,25 @@ case $domainmenu in
 						cat /home/user/Cases/De-Cloud/decloud-$domain.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee /home/user/Cases/De-Cloud/tmp-$domain.txt
 					fi
 					gedit /home/user/Cases/De-Cloud/tmp-$domain.txt &		
-			if zenity --question --text="Would you like to open the findings in a browser?"; then
-				while read links; do 
-				    echo "Opening: $links"; screen -d -m firefox $links
-				done < $FILE
-				echo "Please wait for Firefox to open..."
-			else
-				echo "Done."
-			fi 
-		fi
-		Menu		
-	;;
+					if zenity --question --text="Would you like to open the findings in a browser?"; then
+						while read links; do 
+				  	 	 echo "Opening: $links"; screen -d -m firefox $links
+						done < $FILE
+						echo "Please wait for Firefox to open..."
+					else
+						echo "Done."
+					fi 
+				fi
+			;;
+			$opt6 ) #Get Links
+				domain=$(zenity --entry --width=300 --title "Get Links from a webpage." --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
+				if [ ! -z "$domain" ]; then
+					mkdir /home/user/Cases/Get-Links
+					cd /opt/csitools
+					./getlinks $domain | tee /home/user/Cases/Get-Links/site-links-$domain.txt && gedit /home/user/Cases/Get-Links/site-links-$domain.txt &
+				fi
+			;;
 esac
 
 echo "give me a bottle of rum!"
+
