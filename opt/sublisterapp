@@ -35,7 +35,7 @@ if [ ! -z "$domain" ]; then
 	fi
 	
 	#Run Tool
-	photon -u $domain --wayback --clone --keys -l 3 -t 100 -o /home/user/Cases/$domain/$timestamp-photon-$domain 
+	photon -u $domain -v --wayback --clone --keys --dns -l 3 -t 100 -o /home/user/Cases/$domain
 
 	#Run Tool
 	lynx -dump $domain | tee -a /home/user/Cases/$domain/site-links-$domain.txt 
@@ -65,8 +65,11 @@ if [ ! -z "$domain" ]; then
 	else
 		echo "Done."
 	fi 
+
+	#Run Tool 
+	mkdir /home/user/Cases/$domain/download-files
+	metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/$domain/download-files"
 	thunar /home/user/Cases/$domain >/dev/null 2>&1
 	exit
 	
 fi
-
