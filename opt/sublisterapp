@@ -35,20 +35,17 @@ if [ ! -z "$domain" ]; then
 	fi
 	
 	#Run Tool
-	photon -u $domain --wayback --clone --keys -l 3 -t 100 -o /home/user/Cases/$domain/$timestamp-photon-$domain
-	gedit /home/user/Cases/$domain/$timestamp-photon-$domain &
+	photon -u $domain --wayback --clone --keys -l 3 -t 100 -o /home/user/Cases/$domain/$timestamp-photon-$domain 
 
 	#Run Tool
-	/opt/csitools/getlinks $domain | tee -a /home/user/Cases/$domain/site-links-$domain.txt 
-	gedit /home/user/Cases/$domain/site-links-$domain.txt &
-
+	lynx -dump $domain | tee -a /home/user/Cases/$domain/site-links-$domain.txt 
+	
 	#Run Tool
 	amass intel -whois -ip -src -d $domain  -o /home/user/Cases/$domain/amass-$timestamp-$domain.1.txt 
-	amass enum -src -brute -d $domain -o /home/user/Cases/$domain/amass-$timestamp-$domain.2.txt -d $domain
+	amass enum -src -brute -d $domain -o /home/user/Cases/$domain/amass-$timestamp-$domain.2.txt -d $domain 
 				
 	#Run Tool
-	cd /opt/csitools
-	./decloud $domain | tee /home/user/Cases/$domain/decloud-$domain.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="De-Cloud search, please wait...")
+	/opt/csitools/decloud $domain | tee /home/user/Cases/$domain/decloud-$domain.txt 
 	filename=/home/user/Cases/$domain/decloud-$domain.txt
 	if test -f "$FILE"; then
 		cat /home/user/Cases/$domain/decloud-$domain.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /home/user/Cases/$domain/tmp-$domain.txt
@@ -64,7 +61,7 @@ if [ ! -z "$domain" ]; then
 		while read links; do 
 		    echo "Opening: $links"; screen -d -m firefox $links
 		done < $FILE
-		echo "Please wait for Chrome to open..."
+		echo "Please wait for Firefox to open..."
 	else
 		echo "Done."
 	fi 
@@ -72,3 +69,4 @@ if [ ! -z "$domain" ]; then
 	exit
 	
 fi
+
