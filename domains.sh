@@ -1,8 +1,6 @@
 #!/bin/bash
 
-##Domain Interact Menu Script
 
-#define choices
 opt1="Amass"
 opt2="Sublist3r"
 opt3="Photon"
@@ -128,4 +126,3 @@ case $domainmenu in
 	;;
 esac
 
-echo "give me a bottle of rum!"
