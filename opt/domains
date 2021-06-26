@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-##Domain Interact Menu Script by CSI Linux v2021.1.18.1
-##tools@csilinux.com - Jeremy Martin
+
 
 #define choices
 #opt1="Domain Gatherer"
@@ -114,7 +113,9 @@ case $domainmenu in
 	$opt5 ) #Get Links
 		domain=$(zenity --entry --width=300 --title "Get Links from a webpage." --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
 		if [ ! -z "$domain" ]; then
-			_stopwatch; echo "$stopwatch: Running CSI Website Link Extractor." >> /home/user/Cases/$cases/audit.log
+			_stopwatch; echo "$stopwatch: Running CSI Website Lir/bin/env bash
+##Domain Interact Menu Script by CSI Linux v2021.1.18.1
+##tools@csilinux.com - Jeremy Martinnk Extractor." >> /home/user/Cases/$cases/audit.log
 			mkdir /home/user/Cases/$cases/Export/$domain
 			#Run Tool
 			cd /opt/csitools
