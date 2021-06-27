@@ -34,20 +34,18 @@ if [ ! -z "$domain" ]; then
 	fi
 	
 	#Run Tool
-	photon -u $domain -v --wayback --clone --keys --dns -l 3 -t 100 -o /home/user/Cases/$domain
+	photon -u $domain -v --wayback --clone --keys --dns -l 3 -t 100 -o /home/user/Cases/$domain |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Photon search, please wait...")
 
 	#Run Tool
 	lynx -dump $domain | tee -a /home/user/Cases/$domain/site-links-$domain.txt 
 	
 	#Run Tool
-	amass intel -whois -ip -src -d $domain  -o /home/user/Cases/$domain/amass-$timestamp-$domain.1.txt 
-	amass enum -src -brute -d $domain -o /home/user/Cases/$domain/amass-$timestamp-$domain.2.txt -d $domain 
+	amass intel -whois -ip -src -d $domain  -o /home/user/Cases/$domain/amass-$timestamp-$domain.1.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Amass Intel search, please wait...")
+	amass enum -src -brute -d $domain -o /home/user/Cases/$domain/amass-$timestamp-$domain.2.txt -d $domain |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Amass Enum search, please wait...")
 				
 	#Run Tool
-	/opt/csitools/decloud $domain | tee /home/user/Cases/$domain/decloud-$domain.txt 
-	filename=/home/user/Cases/$domain/decloud-$domain.txt
-	if test -f "$FILE"; then
-		cat /home/user/Cases/$domain/decloud-$domain.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /home/user/Cases/$domain/tmp-$domain.txt
+	/opt/csitools/decloud $domain | tee /home/user/Cases/$domain/decloud-$domain.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="De-Cloud search, please wait...")
+36189.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /home/user/Cases/$domain/tmp-$domain.txt
 		cat /home/user/Cases/$domain/tmp-$domain.txt | sed 's/<BR>/\n/' | sort -u > /tmp/tmp.txt
 		cat /tmp/tmp.txt > /home/user/Cases/$domain/tmp-$domain.txt 
 		rm /tmp/tmp.txt	
@@ -67,7 +65,7 @@ if [ ! -z "$domain" ]; then
 
 	#Run Tool 
 	mkdir /home/user/Cases/$domain/download-files
-	metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/$domain/download-files"
+	metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/$domain/download-files" |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Metagoofil download files, please wait...")
 	thunar /home/user/Cases/$domain >/dev/null 2>&1
 	exit
 	
