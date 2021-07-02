@@ -1,7 +1,6 @@
 #!/bin/bash
 sudo apt -y update && sudo apt -y upgrade
-cd 
-mkdir Programs
+
 sudo apt install -y python3
 sudo apt install -y python-setuptools
 sudo apt install -y jq
@@ -32,8 +31,8 @@ sudo apt install -y konsole
 sudo apt install -y mat2
 sudo apt install -y mc
 sudo apt install -y mediainfo-gui
-sudo apt install -y Sublist3r
-sudo apt install -y Photon
+sudo apt install -y sublist3r
+sudo apt install -y photon
 sudo apt install -y metagoofil
 sudo apt install -y sherlock
 sudo apt install -y spiderfoot
@@ -54,8 +53,8 @@ sudo apt install -y gem
 sudo apt install -y yad
 sudo apt install -y python3-venv
 sudo apt install -y links2
-sudo apt install -y
-sudo apt install -y
+sudo apt install -y lynx
+sudo apt install -y libcurl4 libcurl4-openssl-dev
 
 
 
@@ -69,8 +68,8 @@ sudo snap install --edge miro
 
 
 python3 -m pip install pipx
-pipx install osrframework --upgrade
-pipx install h8mail --upgrade
+pipx install osrframework
+pipx install h8mail 
 pipx install arachnid-spider==0.9.4
 pipx install Instalooter
 pipx install Instaloader
@@ -81,45 +80,51 @@ pipx install socialscan
 pipx install xeuledoc
 pipx install witnessme
 pipx install social-analyzer
+pipx install waybackpacklibcurl4 libcurl4-openssl-dev
+pipx install install git+https://github.com/kisestu/Search4
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 go get github.com/tomnomnom/waybackurls
 gem install wayback_machine_downloader
 
-#git clone https://github.com/leohab75/anonsurf_GUI.git /opt/anonsurf_GUI 
-#sudo chmod +x /opt/anonsurf_GUI/install.sh
-#sudo bash /opt/anonsurf_GUI/install.sh
+git clone https://github.com/leohab75/anonsurf_GUI.git /opt/anonsurf_GUI 
+sudo chmod +x /opt/anonsurf_GUI/install.sh
+sudo bash /opt/anonsurf_GUI/install.sh
 
-#git clone https://github.com/aboul3la/Sublist3r.git /opt/Sublist3r
-#sudo -H pip3 install -r /opt/Sublist3r/requirements.txt
+git clone https://github.com/aboul3la/Sublist3r.git /opt/Sublist3r
+sudo -H pip3 install -r /opt/Sublist3r/requirements.txt
 
-#git clone https://github.com/s0md3v/Photon.git /opt/Photon
-#sudo -H pip3 install -r /opt/Photon/requirements.txt
+git clone https://github.com/s0md3v/Photon.git /opt/Photon
+sudo -H pip3 install -r /opt/Photon/requirements.txt
 
-#git clone https://github.com/opsdisk/metagoofil.git /opt/metagoofil
-#sudo -H pip3 install -r /opt/metagoofil/requirements.txt
+git clone https://github.com/opsdisk/metagoofil.git /opt/metagoofil
+sudo -H pip3 install -r /opt/metagoofil/requirements.txt
 
 
-#git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
-#python3 -m pip install -r /opt/sherlock/requirements.txt
+git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
+python3 -m pip install -r /opt/sherlock/requirements.txt
 
-#git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
-#sudo -H pip3 install -r /opt/spiderfoot/requirements.txt
+git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
+sudo -H pip3 install -r /opt/spiderfoot/requirements.txt
 
 git clone https://github.com/soxoj/maigret /opt/maigret
 sudo pip3 install /opt/maigret/.
 
 git clone https://github.com/megadose/holehe.git /opt/holehe
 cd /opt/holehe && sudo python3 setup.py install
-cd
 
-#git clone https://github.com/thewhiteh4t/FinalRecon /opt/FinalRecon
-#sudo -H pip3 install -r  /opt/FinalRecon/requirements.txt
+
+git clone https://github.com/thewhiteh4t/FinalRecon /opt/FinalRecon
+sudo -H pip3 install -r  /opt/FinalRecon/requirements.txt
 
 git clone https://github.com/m8r0wn/pymeta /opt/pymeta
 cd /opt/pymeta && python3 setup.py install
 
+sudo -S git clone https://github.com/laramies/theHarvester.git /opt/theHarvester
+cd /opt/theHarvester || exit
+git checkout 8b88a66
+sudo -H pip3 install -r requirements.txt
 
 git clone https://github.com/HowToFind-bot/YaSeeker /opt/YaSeeker
 sudo -H pip3 install -r /opt/YaSeeker/requirements.txt
@@ -129,24 +134,30 @@ sudo -H pip3 install /opt/twint
 sudo -H pip3 install -r /opt/twint/requirements.txt
 
 git clone https://github.com/six2dez/reconftw /opt/reconftw
+cd /opt/reconftw/; sudo bash ./install.sh
 
 git clone https://github.com/AhmedConstant/lazyGrandma /opt/lazyGrandma
 
 git clone https://github.com/GeneralTesler/deluxe /opt/deluxe
+pip3 install -r /opt/deluxe/requirements
 
 git clone https://github.com/tdh8316/Investigo /opt/Investigo
+cd /opt/Investigo && sudo go build
 
-git clone https://github.com/jsvine/waybackpack /opt/waybackpack
+#git clone https://github.com/jsvine/waybackpack /opt/waybackpack
 
-git clone https://github.com/0xknown/Search4 /opt/Search4
+#git clone https://github.com/0xknown/Search4 /opt/Search4
 
 git clone https://github.com/m1n64/MagmaOsint /opt/MagmaOsint
+python3 -m pip install -r /opt/MagmaOsint/requirements.txt
 
 git clone https://github.com/noptrix/lulzbuster /opt/lulzbuster
+cd /opt/lulzbuster; make lulzbuster; make install
 
 git clone https://github.com/sham00n/buster /opt/buster
+cd /opt/buster && python3 setup.py install
 
-git clone https://github.com/sundowndev/PhoneInfoga /opt/PhoneInfoga
+#git clone https://github.com/sundowndev/PhoneInfoga /opt/PhoneInfoga
 
 git clone https://github.com/0xInfection/TIDoS-Framework /opt/TIDoS-Framework
 
@@ -154,7 +165,7 @@ git clone https://github.com/saeeddhqan/evine /opt/evine
 
 git clone https://github.com/1N3/Goohak /opt/Goohak
 
-git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
+#git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
 
 git clone https://github.com/Quantika14/email-osint-ripper /opt/email-osint-ripper
 
@@ -192,63 +203,53 @@ git clone https://github.com/mxrch/GHunt /opt/GHunt
 
 git clone https://github.com/Zarcolio/sitedorks /opt/sitedorks
 
-#git clone https://github.com/laramies/theHarvester.git /opt/theHarvester
-#cd /opt/theHarvester
-#git checkout 8b88a66
-#sudo -H pip3 install -r requirements.txt
 
 
-git clone https://github.com/CybernetiX-S3C/InfoSploit &&
- &&
-git clone https://github.com/Double2Sky/GhostRecon &&
-git clone https://github.com/m3n0sd0n4ld/uDork &&
- &&
-&&
-git clone https://github.com/enemy-submarine/pidrila &&
-git clone https://github.com/DedSecInside/TorBot &&
- &&
-git clone https://github.com/noptrix/nullscan &&
-git clone https://github.com/kpcyrd/sn0int &&
-git clone https://github.com/abhisharma404/vault &&
-&&
- &&
- &&
- &&
-&&
-git clone https://github.com/Ekultek/WhatBreach &&
-git clone https://github.com/chriswmorris/Metaforge &&
-git clone https://github.com/saeeddhqan/Maryam &&
-git clone https://github.com/s0md3v/Striker &&
+
+git clone https://github.com/CybernetiX-S3C/InfoSploit 
+
+git clone https://github.com/Double2Sky/GhostRecon 
+git clone https://github.com/m3n0sd0n4ld/uDork 
+
+
+git clone https://github.com/enemy-submarine/pidrila 
+git clone https://github.com/DedSecInside/TorBot 
+
+git clone https://github.com/noptrix/nullscan 
+git clone https://github.com/kpcyrd/sn0int 
+git clone https://github.com/abhisharma404/vault 
+
+git clone https://github.com/Ekultek/WhatBreach 
+git clone https://github.com/chriswmorris/Metaforge 
+git clone https://github.com/saeeddhqan/Maryam 
+git clone https://github.com/s0md3v/Striker 
 git clone https://github.com/gocaio/goca &&
 git clone https://github.com/bhavsec/reconspider &&
 git clone https://github.com/vysecurity/autovpn &&
- &&
+
 git clone https://github.com/eschultze/URLextractor &&
 git clone https://github.com/devanshbatham/Gorecon &&
- &&
+
 git clone https://github.com/Anon-Exploiter/SiteBroker &&
-git clone https://github.com/abaykan/53R3N17Y &&
- &&
+
 git clone https://github.com/restanse/NicknameFinder &&
 git clone https://github.com/shmilylty/OneForAll &&
 git clone https://github.com/m4ll0k/Infoga &&
- &&
- &&
+
 git clone https://github.com/Cignoraptor-ita/cignotrack &&
-&&
-&&
+
 git clone https://github.com/kennbroorg/iKy &&
-&&
+
 git clone https://github.com/jocephus/WikiLeaker &&
 git clone https://github.com/hatlord/Spiderpig &&
 git clone https://github.com/m8r0wn/nullinux &&
 git clone https://github.com/r3vn/badKarma &&
-&&
+
 git clone https://github.com/twelvesec/gasmask &&
 git clone https://github.com/jcesarstef/seosint &&
- &&
+
 git clone https://github.com/Shiva108/OSIRA &&
- &&
+
 git clone https://github.com/adnane-X-tebbaa/Katana &&
 git clone https://github.com/Tuhinshubhra/RED_HAWK &&
 git clone https://github.com/IvanGlinkin/Fast-Google-Dorks-Scan &&
@@ -257,10 +258,7 @@ git clone https://github.com/GerbenJavado/LinkFinder &&
 git clone https://github.com/eescanilla/OSINTBashKALI &&
 git clone https://github.com/radenvodka/Recsech &&
 git clone https://github.com/woj-ciech/LeakLooker-X &&
- &&
-&&
+
+
 git clone https://github.com/ThomasPWy/drwho.sh &&
-
-
-
-
+exit
