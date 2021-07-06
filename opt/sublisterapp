@@ -28,7 +28,7 @@ if [ ! -z "$domain" ]; then
 	fi
 	
 	#Run Tool
-	theHarvester -d $domain -b all -f /home/user/Cases/$domain/$timestamp-theharvester-$domain.html |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="theHarvester search, please wait...")
+	theHarvester -d $domain -b baidu,bing,google,yahoo,virustotal,certspotter,crtsh,dnsdumpster,duckduckgo,exalead,hackertarget,intelx,hunter,netcraft,otx,pentesttools,projectdiscovery,qwant,rapiddns,securityTrails,sublist3r,threatcrowd,threatminer,trello,twitter,urlscan -f /home/user/Cases/$domain/$timestamp-theharvester-$domain.html |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="theHarvester search, please wait...")
 	if [ -f /home/user/Cases/$timestamp-theharvester-$domain.html  ]; then
 		screen -d -m firefox /home/user/Cases/$timestamp-theharvester-$domain.html	
 	fi
