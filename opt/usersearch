@@ -1,9 +1,11 @@
 #!/bin/bash
 # usage ./usersearch.sh username
+echo 'Enter UserName'
+read username
 trap 'printf "\n";exit 1' 2
 mkdir /root/Cases/Usersearch
-echo $1 >> /root/Cases/Usersearch/Account_Search_$1.txt
-filename=/root/Cases/Usersearch/Account_Search_$1.txt
+echo $username >> /root/Cases/Usersearch/Account_Search_$username.txt
+filename=/root/Cases/Usersearch/Account_Search_$username.txt
 
 testuser() {
 	printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] $sitename: \e[0m"
@@ -12,15 +14,15 @@ testuser() {
 		if [[ $check1 == *'1'* ]] ; then 
 			printf "\e[1;93mNot Found!\e[0m\n" 
 		elif [[ $check1 == *'0'* ]]; then 
-			printf "\e[1;92m Found!\e[0m $sitetest\n" $1
-			printf "$sitetest\n" $1 >> $filename
+			printf "\e[1;92m Found!\e[0m $sitetest\n" $username
+			printf "$sitetest\n" $username >> $filename
 		fi
 	elif [[ $userfound == *'0'* ]]; then 
 		if [[ $check1 == *'0'* ]] ; then 
 			printf "\e[1;93mNot Found!\e[0m\n" 
 		elif [[ $check1 == *'1'* ]]; then 
-			printf "\e[1;92m Found!\e[0m $sitetest\n" $1
-			printf "$sitetest\n" $1 >> $filename
+			printf "\e[1;92m Found!\e[0m $sitetest\n" $username
+			printf "$sitetest\n" $username >> $filename
 		fi
 	fi
 }
@@ -33,7 +35,7 @@ printf "  \e[101m\e[1;77m:: Disclaimer: Developers assume no liability and are n
 printf "  \e[101m\e[1;77m:: responsible for any misuse or damage caused by user...    ::\e[0m\n"
 printf "  \e[101m\e[1;77m:: Verify findings.  There may be false positives/negatives. ::\e[0m\n"
 printf "\n"
-echo "Searching for the Username:  " $1
+echo "Searching for the Username:  " $username
 printf "\n"
 
 if [[ -e $filename ]]; then
@@ -41,369 +43,369 @@ printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Removing previous file:\e[0m\e[1;7
 rm -rf $filename
 fi
 printf "\n"
-printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Checking username\e[0m\e[1;77m $1\e[0m\e[1;92m on: \e[0m\n" $1
+printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Checking username\e[0m\e[1;77m $username\e[0m\e[1;92m on: \e[0m\n" $username
 
 touch $filename
 
 # Social Media
 sitename="INSTAGRAM"
-sitetest="https://www.instagram.com/$1"
+sitetest="https://www.instagram.com/$username"
 stringtest="may be broken"
 userfound="0"
 testuser
 
 sitename="Facebook"
-sitetest="https://www.facebook.com/$1"
+sitetest="https://www.facebook.com/$username"
 stringtest="not found\|may be broken\|removed"
 userfound="0"
 testuser
 
 sitename="MySpace"
-sitetest="https://myspace.com/$1"
+sitetest="https://myspace.com/$username"
 stringtest="find the page"
 userfound="0"
 testuser
 
 sitename="Twitter"
-sitetest="https://www.twitter.com/$1"
+sitetest="https://www.twitter.com/$username"
 stringtest="page doesn’t exist"
 userfound="0"
 testuser
 
 sitename="Blogspot"
-sitetest="https://$1.blogspot.com"
+sitetest="https://$username.blogspot.com"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Bandcamp"
-sitetest="https://www.bandcamp.com/$1"
+sitetest="https://www.bandcamp.com/$username"
 stringtest="Sorry"
 userfound="0"
 testuser
 
 sitename="Redit"
-sitetest="https://www.reddit.com/user/$1"
+sitetest="https://www.reddit.com/user/$username"
 stringtest="karma"
 userfound="1"
 testuser
 
 sitename="Wordpress"
-sitetest="https://$1.wordpress.com"
+sitetest="https://$username.wordpress.com"
 stringtest="want to register"
 userfound="0"
 testuser
 
 sitename="Pintrest"
-sitetest="https://www.pinterest.com/$1"
+sitetest="https://www.pinterest.com/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Tumblr"
-sitetest="https://$1.tumblr.com"
+sitetest="https://$username.tumblr.com"
 stringtest="nothing here"
 userfound="0"
 testuser
 
 sitename="Flickr"
-sitetest="https://www.flickr.com/people/$1"
+sitetest="https://www.flickr.com/people/$username"
 stringtest="exist"
 userfound="0"
 testuser
 
 sitename="Disqus"
-sitetest="https://disqus.com/$1"
+sitetest="https://disqus.com/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Medium"
-sitetest="https://medium.com/@$1"
+sitetest="https://medium.com/@$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="VK"
-sitetest="https://vk.com/$1"
+sitetest="https://vk.com/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="About.Me"
-sitetest="https://about.me/$1"
+sitetest="https://about.me/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Flipboard"
-sitetest="https://flipboard.com/@$1"
+sitetest="https://flipboard.com/@$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="SlideShare"
-sitetest="https://slideshare.net/$1"
+sitetest="https://slideshare.net/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Scribd"
-sitetest="https://www.scribd.com/$1"
+sitetest="https://www.scribd.com/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Badoo"
-sitetest="https://www.badoo.com/en/$1"
+sitetest="https://www.badoo.com/en/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Patreon"
-sitetest="https://www.patreon.com/$1"
+sitetest="https://www.patreon.com/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="BitBucket"
-sitetest="https://bitbucket.org/$1"
+sitetest="https://bitbucket.org/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Etsy"
-sitetest="https://www.etsy.com/shop/$1"
+sitetest="https://www.etsy.com/shop/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Cash.Me"
-sitetest="https://cash.me/$1"
+sitetest="https://cash.me/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Behance"
-sitetest="https://www.behance.net/$1"
+sitetest="https://www.behance.net/$username"
 stringtest="find that page"
 userfound="0"
 testuser
 
 sitename="GoodReads"
-sitetest="https://www.goodreads.com/$1"
+sitetest="https://www.goodreads.com/$username"
 stringtest="not found"
 userfound="0"
 testuser
 
 sitename="Instructables"
-sitetest="https://www.instructables.com/member/$1"
+sitetest="https://www.instructables.com/member/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Keybase"
-sitetest="https://keybase.io/$1"
+sitetest="https://keybase.io/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Kongregate"
-sitetest="https://kongregate.com/accounts/$1"
+sitetest="https://kongregate.com/accounts/$username"
 stringtest="was found"
 userfound="0"
 testuser
 
 sitename="LiveJournal"
-sitetest="https://$1.livejournal.com"
+sitetest="https://$username.livejournal.com"
 stringtest="Unknown"
 userfound="0"
 testuser
 
 sitename="Dribble"
-sitetest="https://dribbble.com/$1"
+sitetest="https://dribbble.com/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="CodeAcademy"
-sitetest="https://discuss.codecademy.com/u/$1/summary"
+sitetest="https://discuss.codecademy.com/u/$username/summary"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Gravatar"
-sitetest="https://en.gravatar.com/$1"
+sitetest="https://en.gravatar.com/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Pastebin"
-sitetest="https://pastebin.com/u/$1"
+sitetest="https://pastebin.com/u/$username"
 stringtest="location: /index"
 userfound="0"
 testuser
 
 sitename="GumRoad"
-sitetest="https://www.gumroad.com/$1"
+sitetest="https://www.gumroad.com/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="NewGrounds"
-sitetest="https://$1.newgrounds.com"
+sitetest="https://$username.newgrounds.com"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="WattPad"
-sitetest="https://www.wattpad.com/user/$1"
+sitetest="https://www.wattpad.com/user/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Canva"
-sitetest="https://www.canva.com/$1"
+sitetest="https://www.canva.com/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Trakt.TV"
-sitetest="https://www.trakt.tv/users/$1"
+sitetest="https://www.trakt.tv/users/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="500px"
-sitetest="https://500px.com/$1"
+sitetest="https://500px.com/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Buzzfeed"
-sitetest="https://buzzfeed.com/$1"
+sitetest="https://buzzfeed.com/$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="HubPages"
-sitetest="https://hubpages.com/@$1"
+sitetest="https://hubpages.com/@$username"
 stringtest="HTTP/2 404\|Not Found"
 userfound="0"
 testuser
 
 sitename="Contently"
-sitetest="https://$1.contently.com"
+sitetest="https://$username.contently.com"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="Blip.FM"
-sitetest="https://blip.fm/$1"
+sitetest="https://blip.fm/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="Reverbnation"
-sitetest="https://www.reverbnation.com/$1"
+sitetest="https://www.reverbnation.com/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="Designspiration"
-sitetest="https://www.designspiration.net/$1"
+sitetest="https://www.designspiration.net/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="ColourLovers"
-sitetest="https://www.colourlovers.com/lover/$1"
+sitetest="https://www.colourlovers.com/lover/$username"
 stringtest="Content Removed"
 userfound="0"
 testuser
 
 sitename="Ello"
-sitetest="https://ello.co/$1"
+sitetest="https://ello.co/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 # Communications
 sitename="BasecampHQ"
-sitetest="https://$1.basecamphq.com/login"
+sitetest="https://$username.basecamphq.com/login"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="Slack"
-sitetest="https://$1.slack.com"
-stringtest="$1"
+sitetest="https://$username.slack.com"
+stringtest="$username"
 userfound="1"
 testuser
 
 sitename="Signal"
-sitetest="https://community.signalusers.org/u/$1"
+sitetest="https://community.signalusers.org/u/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="Telegram"
-sitetest="https://telegram.me/$1"
+sitetest="https://telegram.me/$username"
 stringtest="you can view and join"
 userfound="1"
 testuser
 
 # Media
 sitename="YouTub"
-sitetest="https://www.youtube.com/$1"
+sitetest="https://www.youtube.com/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Vimeo"
-sitetest="https://vimeo.com/$1"
+sitetest="https://vimeo.com/$username"
 stringtest="VimeUhOh"
 userfound="0"
 testuser
 
 sitename="DailyMotion"
-sitetest="https://www.dailymotion.com/$1"
+sitetest="https://www.dailymotion.com/$username"
 stringtest="not found"
 userfound="0"
 testuser
 
 sitename="CrunchyRoll"
-sitetest="https://www.crunchyroll.com/user/$1"
+sitetest="https://www.crunchyroll.com/user/$username"
 stringtest="not found"
 userfound="0"
 testuser
 
 sitename="SoundCloud"
-sitetest="https://soundcloud.com/$1"
+sitetest="https://soundcloud.com/$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="DeviantArt"
-sitetest="https://$1.deviantart.com"
+sitetest="https://$username.deviantart.com"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="Spotify"
-sitetest="https://open.spotify.com/user/$1"
+sitetest="https://open.spotify.com/user/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="MixCloud"
-sitetest="https://www.mixcloud.com/$1"
+sitetest="https://www.mixcloud.com/$username"
 stringtest="404\|Page Not Found"
 userfound="0"
 testuser
 
 sitename="Last.FM"
-sitetest="https://last.fm/user/$1"
+sitetest="https://last.fm/user/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
@@ -412,109 +414,110 @@ testuser
 
 # Sales and Purchasing
 sitename="Ebay"
-sitetest="https://www.ebay.com/usr/$1"
+sitetest="https://www.ebay.com/usr/$username"
 stringtest="HTTP/2 404\|404 Not Found\|eBay Profile - error"
 userfound="0"
 testuser
 
 sitename="PayPal"
-sitetest="https://www.paypal.me/$1"
+sitetest="https://www.paypal.me/$username"
 stringtest="NOINDEX,NOFOLLOW,NOARCHIVE"
 userfound="1"
 testuser
 
 sitename="Onlyfans"
-sitetest="https://onlyfans.com/$1"
+sitetest="https://onlyfans.com/$username"
 stringtest="HTTP/2 302"
 userfound="0"
 testuser
 
 sitename="BitcoinForum"
-sitetest="https://bitcoinforum.com/profile/$1"
+sitetest="https://bitcoinforum.com/profile/$username"
 stringtest="error"
 userfound="0"
 testuser
 
 sitename="IFTTT"
-sitetest="https://www.ifttt.com/p/$1"
+sitetest="https://www.ifttt.com/p/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="Producthunt"
-sitetest="https://www.producthunt.com/@$1"
+sitetest="https://www.producthunt.com/@$username"
 stringtest="likes on Product Hunt"
 userfound="1"
 testuser
 
 # Travel
 sitename="SkyScanner"
-sitetest="https://www.skyscanner.com/trip/user/$1"
+sitetest="https://www.skyscanner.com/trip/user/$username"
 stringtest="HTTP/2 410"
 userfound="0"
 testuser
 
 sitename="TripAdvisor"
-sitetest="https://tripadvisor.com/members/$1"
+sitetest="https://tripadvisor.com/members/$username"
 stringtest="HTTP/2 404"
 userfound="0"
 testuser
 
 sitename="TripIt"
-sitetest="https://www.tripit.com/people/$1#/profile/basic-info"
+sitetest="https://www.tripit.com/people/$username#/profile/basic-info"
 stringtest="location: https://www.tripit.com/home"
 userfound="0"
 testuser
 
 ## Games
 sitename="Roblox"
-sitetest="https://www.roblox.com/user.aspx?username=$1"
+sitetest="https://www.roblox.com/user.aspx?username=$username"
 stringtest="404"
 userfound="0"
 testuser
 
 sitename="SteamCommunity"
-sitetest="https://steamcommunity.com/id/$1"
+sitetest="https://steamcommunity.com/id/$username"
 stringtest="HTTP2/ 404\|could not be found"
 userfound="0"
 testuser
 
 # Technical
 sitename="CodeMentor"
-sitetest="https://www.codementor.io/$1"
+sitetest="https://www.codementor.io/$username"
 stringtest="HTTP/2 404\|404 Not Found"
 userfound="0"
 testuser
 
 sitename="GitHub"
-sitetest="https://www.github.com/$1"
+sitetest="https://www.github.com/$username"
 stringtest="HTTP/2 404\|404"
 userfound="0"
 testuser
 
 sitename="YCombinator"
-sitetest="https://news.ycombinator.com/user?id=$1"
+sitetest="https://news.ycombinator.com/user?id=$username"
 stringtest="HTTP/2 404\|404\|No such user"
 userfound="0"
 testuser
 
 sitename="SEC.gov Database Search"
-sitetest="https://www.sec.gov/cgi-bin/browse-edgar?company=$1&owner=exclude&action=getcompany"
+sitetest="https://www.sec.gov/cgi-bin/browse-edgar?company=$username&owner=exclude&action=getcompany"
 stringtest="HTTP/2 404\|404\|No matching companies"
 userfound="0"
 testuser
 
 sitename="Mail-Archive"
-sitetest="https://www.mail-archive.com/search?l=all&q=$1"
+sitetest="https://www.mail-archive.com/search?l=all&q=$username"
 stringtest="HTTP/2 404\|404\|No match"
 userfound="0"
 testuser
 
 sitename="Wikipedia"
-sitetest="https://www.wikipedia.org/wiki/User:$1"
+sitetest="https://www.wikipedia.org/wiki/User:$username"
 stringtest="not registered"
 userfound="0"
 testuser
 
-gedit /root/Cases/Usersearch/Account_Search_$1.txt
+gedit /root/Cases/Usersearch/Account_Search_$username.txt
+
 
