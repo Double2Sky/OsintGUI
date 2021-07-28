@@ -6,11 +6,13 @@ opt2="Sublist3r"
 opt3="Photon"
 opt4="TheHarvester"
 opt5="De-Cloud"
+opt6="Get Links"
+opt7="Raccoon-Scanner"
 
 timestamp=$(date +%Y-%m-%d:%H:%M)
 fqdnregex="\b((xn--)?[a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}\b"
 
-domainmenu=$(zenity  --list  --title "Domain Tool" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" 2> >(grep -v 'GtkDialog' >&2)) 
+domainmenu=$(zenity  --list  --title "Domain Tool" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" FALSE "$opt6" FALSE "$opt7" 2> >(grep -v 'GtkDialog' >&2)) 
 
 case $domainmenu in
 	$opt1 ) #Amass
@@ -121,8 +123,26 @@ case $domainmenu in
 			else
 				echo "Done."
 			fi 
-		fi
-		Menu		
-	;;
+		fi	
+		;;
+			$opt6 ) #Get Links
+				domain=$(zenity --entry --width=300 --title "Get Links from a webpage." --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
+				if [ ! -z "$domain" ]; then
+					mkdir /root/Cases/Get-Links
+					cd /opt/csitools
+					./getlinks $domain | tee /root/Cases/Get-Links/site-links-$domain.txt && gedit /root/Cases/Get-Links/site-links-$domain.txt &
+				fi
+				exit
+			;;
+			$opt7 ) #Raccoon-Scanner
+				domain=$(zenity --entry --width=300 --title "Running Raccoon-Scanner" --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
+				if [ ! -z "$domain" ]; then
+					mkdir /root/Cases/Raccoon
+					raccoon $domain -o /root/Cases/Raccoon
+					thunar /root/Cases/Raccoon
+				fi
+			exit
+		;;
+		Menu
 esac
 
