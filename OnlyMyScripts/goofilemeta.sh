@@ -6,7 +6,7 @@ echo "Enter domain"
 
 read -r domain
 
-mkdir -p ~/Cases/"$domain"
+mkdir -p "$HOME/Cases/$domain"
 cd ~/Cases/"$domain" || exit
 {
     goofile -d "$domain" -f pdf 
@@ -21,3 +21,6 @@ cd ~/Cases/"$domain" || exit
 wget -i goofile-"$domain".txt --no-check-certificate
 
 exiftool ./* >> metadata.txt
+
+thunar "$HOME/Cases/$domain" >/dev/null 2>&1
+gedit metadata.txt &
