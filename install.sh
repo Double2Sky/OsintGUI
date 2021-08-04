@@ -55,7 +55,7 @@ sudo apt install -y python3-venv
 sudo apt install -y links2
 sudo apt install -y lynx
 sudo apt install -y libcurl4 libcurl4-openssl-dev
-
+sudo apt install -y cargo
 
 
 
@@ -81,7 +81,8 @@ pipx install xeuledoc
 pipx install witnessme
 pipx install social-analyzer
 pipx install waybackpacklibcurl4 libcurl4-openssl-dev
-pipx install install git+https://github.com/kisestu/Search4
+pipx install git+https://github.com/kisestu/Search4
+pipx install git+https://github.com/domainaware/checkdmarc.git
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
@@ -156,6 +157,12 @@ cd /opt/lulzbuster; make lulzbuster; make install
 
 git clone https://github.com/sham00n/buster /opt/buster
 cd /opt/buster && python3 setup.py install
+
+git clone -q -b master https://github.com/kpcyrd/sn0int.git /opt/sn0int
+cd /opt/sn0int/ && cargo install -f --path . 
+
+git clone -q -b master https://github.com/twelvesec/gasmask.git /opt/gasmask
+python3 -m pip install --progress-bar off -r /opt/gasmask/requirements.txt
 
 #git clone https://github.com/sundowndev/PhoneInfoga /opt/PhoneInfoga
 
