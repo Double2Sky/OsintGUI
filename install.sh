@@ -41,8 +41,8 @@ sudo apt install -y osrframework
 sudo apt install -y python3-all
 sudo apt install -y stacer
 sudo apt install -y htop
-sudo apt install -y theHarvester
-sudo apt install -y webhttrach httrack
+sudo apt install -y theharvester
+sudo apt install -y webhttrack httrack
 sudo apt install -y eyewitness
 sudo apt install -y whatweb
 sudo apt install -y wig
