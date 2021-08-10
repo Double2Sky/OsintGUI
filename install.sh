@@ -166,6 +166,8 @@ cd /home/user/OsintTools/sn0int/ && cargo install -f --path .
 git clone -q -b master https://github.com/twelvesec/gasmask.git /home/user/OsintTools/gasmask
 python3 -m pip install --progress-bar off -r /home/user/OsintTools/gasmask/requirements.txt
 
+git clone https://github.com/Lucksi/Mr.Holmes /home/user/OsintTools/Mr.Holmes
+
 git clone https://github.com/1N3/Sn1per /home/user/OsintTools/Sn1per
 
 #git clone https://github.com/sundowndev/PhoneInfoga /home/user/OsintTools/PhoneInfoga
