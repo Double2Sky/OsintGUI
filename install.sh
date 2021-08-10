@@ -60,8 +60,10 @@ sudo apt install -y cargo
 
 
 
-sudo apt install -y snapd gnome-software-plugin-snap
+sudo apt install -y snapd 
+sudo apt install -y gnome-software-plugin-snap
 sudo systemctl enable --now snapd apparmor
+sudo snap install snap-store
 sudo snap install --classic riseup-vpn
 sudo snap install --candidate vscode
 sudo snap install --edge miro
@@ -75,12 +77,12 @@ pipx install Instalooter
 pipx install Instaloader
 pipx install raccoon-scanner
 pipx install r3con1z3r
-pipx install blackwidow
+#pipx install blackwidow
 pipx install socialscan
 pipx install xeuledoc
 pipx install witnessme
 pipx install social-analyzer
-pipx install waybackpacklibcurl4 libcurl4-openssl-dev
+pipx install waybackpack
 pipx install git+https://github.com/kisestu/Search4
 pipx install git+https://github.com/domainaware/checkdmarc.git
 
@@ -89,126 +91,128 @@ GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfind
 go get github.com/tomnomnom/waybackurls
 gem install wayback_machine_downloader
 
-git clone https://github.com/leohab75/anonsurf_GUI.git /opt/anonsurf_GUI 
-sudo chmod +x /opt/anonsurf_GUI/install.sh
-sudo bash /opt/anonsurf_GUI/install.sh
+git clone https://github.com/leohab75/anonsurf_GUI.git /home/user/OsintTools/anonsurf_GUI 
+sudo chmod +x /home/user/OsintTools/anonsurf_GUI/install.sh
+sudo bash /home/user/OsintTools/anonsurf_GUI/install.sh
 
-git clone https://github.com/aboul3la/Sublist3r.git /opt/Sublist3r
-sudo -H pip3 install -r /opt/Sublist3r/requirements.txt
+git clone https://github.com/aboul3la/Sublist3r.git /home/user/OsintTools/Sublist3r
+sudo -H pip3 install -r /home/user/OsintTools/Sublist3r/requirements.txt
 
-git clone https://github.com/s0md3v/Photon.git /opt/Photon
-sudo -H pip3 install -r /opt/Photon/requirements.txt
+git clone https://github.com/s0md3v/Photon.git /home/user/OsintTools/Photon
+sudo -H pip3 install -r /home/user/OsintTools/Photon/requirements.txt
 
-git clone https://github.com/opsdisk/metagoofil.git /opt/metagoofil
-sudo -H pip3 install -r /opt/metagoofil/requirements.txt
-
-
-git clone https://github.com/sherlock-project/sherlock.git /opt/sherlock
-python3 -m pip install -r /opt/sherlock/requirements.txt
-
-git clone https://github.com/smicallef/spiderfoot.git /opt/spiderfoot
-sudo -H pip3 install -r /opt/spiderfoot/requirements.txt
-
-git clone https://github.com/soxoj/maigret /opt/maigret
-sudo pip3 install /opt/maigret/.
-
-git clone https://github.com/megadose/holehe.git /opt/holehe
-cd /opt/holehe && sudo python3 setup.py install
+git clone https://github.com/opsdisk/metagoofil.git /home/user/OsintTools/metagoofil
+sudo -H pip3 install -r /home/user/OsintTools/metagoofil/requirements.txt
 
 
-git clone https://github.com/thewhiteh4t/FinalRecon /opt/FinalRecon
-sudo -H pip3 install -r  /opt/FinalRecon/requirements.txt
+git clone https://github.com/sherlock-project/sherlock.git /home/user/OsintTools/sherlock
+python3 -m pip install -r /home/user/OsintTools/sherlock/requirements.txt
 
-git clone https://github.com/m8r0wn/pymeta /opt/pymeta
-cd /opt/pymeta && python3 setup.py install
+git clone https://github.com/smicallef/spiderfoot.git /home/user/OsintTools/spiderfoot
+sudo -H pip3 install -r /home/user/OsintTools/spiderfoot/requirements.txt
 
-sudo -S git clone https://github.com/laramies/theHarvester.git /opt/theHarvester
-cd /opt/theHarvester || exit
+git clone https://github.com/soxoj/maigret /home/user/OsintTools/maigret
+sudo pip3 install /home/user/OsintTools/maigret/.
+
+git clone https://github.com/megadose/holehe.git /home/user/OsintTools/holehe
+cd /home/user/OsintTools/holehe && sudo python3 setup.py install
+
+
+git clone https://github.com/thewhiteh4t/FinalRecon /home/user/OsintTools/FinalRecon
+sudo -H pip3 install -r  /home/user/OsintTools/FinalRecon/requirements.txt
+
+git clone https://github.com/m8r0wn/pymeta /home/user/OsintTools/pymeta
+cd /home/user/OsintTools/pymeta && python3 setup.py install
+
+sudo -S git clone https://github.com/laramies/theHarvester.git /home/user/OsintTools/theHarvester
+cd /home/user/OsintTools/theHarvester || exit
 git checkout 8b88a66
 sudo -H pip3 install -r requirements.txt
 
-git clone https://github.com/HowToFind-bot/YaSeeker /opt/YaSeeker
-sudo -H pip3 install -r /opt/YaSeeker/requirements.txt
+git clone https://github.com/HowToFind-bot/YaSeeker /home/user/OsintTools/YaSeeker
+sudo -H pip3 install -r /home/user/OsintTools/YaSeeker/requirements.txt
 
-git clone https://github.com/twintproject/twint.git /opt/twint
-sudo -H pip3 install /opt/twint
-sudo -H pip3 install -r /opt/twint/requirements.txt
+git clone https://github.com/twintproject/twint.git /home/user/OsintTools/twint
+sudo -H pip3 install /home/user/OsintTools/twint
+sudo -H pip3 install -r /home/user/OsintTools/twint/requirements.txt
 
-git clone https://github.com/six2dez/reconftw /opt/reconftw
-cd /opt/reconftw/; sudo bash ./install.sh
+git clone https://github.com/six2dez/reconftw /home/user/OsintTools/reconftw
+cd /home/user/OsintTools/reconftw/; bash ./install.sh
 
-git clone https://github.com/AhmedConstant/lazyGrandma /opt/lazyGrandma
+git clone https://github.com/AhmedConstant/lazyGrandma /home/user/OsintTools/lazyGrandma
 
-git clone https://github.com/GeneralTesler/deluxe /opt/deluxe
-pip3 install -r /opt/deluxe/requirements
+git clone https://github.com/GeneralTesler/deluxe /home/user/OsintTools/deluxe
+pip3 install -r /home/user/OsintTools/deluxe/requirements
 
-git clone https://github.com/tdh8316/Investigo /opt/Investigo
-cd /opt/Investigo && sudo go build
+git clone https://github.com/tdh8316/Investigo /home/user/OsintTools/Investigo
+cd /home/user/OsintTools/Investigo && go build
 
-#git clone https://github.com/jsvine/waybackpack /opt/waybackpack
+#git clone https://github.com/jsvine/waybackpack /home/user/OsintTools/waybackpack
 
-#git clone https://github.com/0xknown/Search4 /opt/Search4
+#git clone https://github.com/0xknown/Search4 /home/user/OsintTools/Search4
 
-git clone https://github.com/m1n64/MagmaOsint /opt/MagmaOsint
-python3 -m pip install -r /opt/MagmaOsint/requirements.txt
+git clone https://github.com/m1n64/MagmaOsint /home/user/OsintTools/MagmaOsint
+python3 -m pip install -r /home/user/OsintTools/MagmaOsint/requirements.txt
 
-git clone https://github.com/noptrix/lulzbuster /opt/lulzbuster
-cd /opt/lulzbuster; make lulzbuster; make install
+git clone https://github.com/nhome/user/OsintToolsrix/lulzbuster /home/user/OsintTools/lulzbuster
+cd /home/user/OsintTools/lulzbuster; make lulzbuster; make install
 
-git clone https://github.com/sham00n/buster /opt/buster
-cd /opt/buster && python3 setup.py install
+git clone https://github.com/sham00n/buster /home/user/OsintTools/buster
+cd /home/user/OsintTools/buster && python3 setup.py install
 
-git clone -q -b master https://github.com/kpcyrd/sn0int.git /opt/sn0int
-cd /opt/sn0int/ && cargo install -f --path . 
+git clone -q -b master https://github.com/kpcyrd/sn0int.git /home/user/OsintTools/sn0int
+cd /home/user/OsintTools/sn0int/ && cargo install -f --path . 
 
-git clone -q -b master https://github.com/twelvesec/gasmask.git /opt/gasmask
-python3 -m pip install --progress-bar off -r /opt/gasmask/requirements.txt
+git clone -q -b master https://github.com/twelvesec/gasmask.git /home/user/OsintTools/gasmask
+python3 -m pip install --progress-bar off -r /home/user/OsintTools/gasmask/requirements.txt
 
-#git clone https://github.com/sundowndev/PhoneInfoga /opt/PhoneInfoga
+git clone https://github.com/1N3/Sn1per /home/user/OsintTools/Sn1per
 
-git clone https://github.com/0xInfection/TIDoS-Framework /opt/TIDoS-Framework
+#git clone https://github.com/sundowndev/PhoneInfoga /home/user/OsintTools/PhoneInfoga
 
-git clone https://github.com/saeeddhqan/evine /opt/evine
+git clone https://github.com/0xInfection/TIDoS-Framework /home/user/OsintTools/TIDoS-Framework
 
-git clone https://github.com/1N3/Goohak /opt/Goohak
+git clone https://github.com/saeeddhqan/evine /home/user/OsintTools/evine
 
-#git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
+git clone https://github.com/1N3/Goohak /home/user/OsintTools/Goohak
 
-git clone https://github.com/Quantika14/email-osint-ripper /opt/email-osint-ripper
+#git clone https://github.com/qeeqbox/social-analyzer /home/user/OsintTools/social-analyzer
 
-git clone https://github.com/maurosoria/dirsearch /opt/dirsearch
+git clone https://github.com/Quantika14/email-osint-ripper /home/user/OsintTools/email-osint-ripper
 
-git clone https://github.com/ScriptnKitten/scriptnOsint /opt/scriptnOsint
+git clone https://github.com/maurosoria/dirsearch /home/user/OsintTools/dirsearch
 
-git clone https://github.com/snooppr/snoop /opt/snoop
+git clone https://github.com/ScriptnKitten/scriptnOsint /home/user/OsintTools/scriptnOsint
 
-git clone https://github.com/megadose/OnionSearch /opt/OnionSearch
+git clone https://github.com/snooppr/snoop /home/user/OsintTools/snoop
 
-git clone https://github.com/woj-ciech/LeakLooker-X /opt/LeakLooker-X
+git clone https://github.com/megadose/OnionSearch /home/user/OsintTools/OnionSearch
 
-git clone https://github.com/GerbenJavado/gainder /opt/LinkFinder
+git clone https://github.com/woj-ciech/LeakLooker-X /home/user/OsintTools/LeakLooker-X
 
-git clone https://github.com/qeeqbox/social-analyzer /opt/social-analyzer
+git clone https://github.com/GerbenJavado/gainder /home/user/OsintTools/LinkFinder
 
-git clone https://github.com/twelvesec/gasmask /opt/gasmask
+git clone https://github.com/qeeqbox/social-analyzer /home/user/OsintTools/social-analyzer
 
-git clone https://github.com/alpkeskin/mosint /opt/mosint
+git clone https://github.com/twelvesec/gasmask /home/user/OsintTools/gasmask
 
-git clone https://github.com/megadose/holehe /opt/holehe
+git clone https://github.com/alpkeskin/mosint /home/user/OsintTools/mosint
 
-git clone https://github.com/Cignoraptor-ita/cignotrack /opt/cignotrack 
+git clone https://github.com/megadose/holehe /home/user/OsintTools/holehe
 
-git clone https://github.com/eschultze/URLextractor /opt/URLextractor
+git clone https://github.com/Cignoraptor-ita/cignotrack /home/user/OsintTools/cignotrack 
 
-git clone https://github.com/enemy-submarine/pidrila /opt/pidrila
+git clone https://github.com/eschultze/URLextractor /home/user/OsintTools/URLextractor
 
-git clone https://github.com/WebBreacher/WhatsMyName /opt/WhatsMyName
+git clone https://github.com/enemy-submarine/pidrila /home/user/OsintTools/pidrila
 
-git clone https://github.com/HA71/Namechk /opt/Namechk
+git clone https://github.com/WebBreacher/WhatsMyName /home/user/OsintTools/WhatsMyName
 
-git clone https://github.com/mxrch/GHunt /opt/GHunt
+git clone https://github.com/HA71/Namechk /home/user/OsintTools/Namechk
 
-git clone https://github.com/Zarcolio/sitedorks /opt/sitedorks
+git clone https://github.com/mxrch/GHunt /home/user/OsintTools/GHunt
+
+git clone https://github.com/Zarcolio/sitedorks /home/user/OsintTools/sitedorks
 
 
 
@@ -222,7 +226,7 @@ git clone https://github.com/m3n0sd0n4ld/uDork
 git clone https://github.com/enemy-submarine/pidrila 
 git clone https://github.com/DedSecInside/TorBot 
 
-git clone https://github.com/noptrix/nullscan 
+git clone https://github.com/nhome/user/OsintToolsrix/nullscan 
 git clone https://github.com/kpcyrd/sn0int 
 git clone https://github.com/abhisharma404/vault 
 
