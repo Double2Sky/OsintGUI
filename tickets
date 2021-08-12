@@ -1,2 +1,4 @@
+maryam -e crawler -d avgust.com
+
 aquatone-discover --domain $domain
 aquatone-takeover --domain $domain
