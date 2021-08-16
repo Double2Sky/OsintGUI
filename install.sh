@@ -142,7 +142,7 @@ cd /home/user/OsintTools/reconftw/; bash ./install.sh
 git clone https://github.com/AhmedConstant/lazyGrandma /home/user/OsintTools/lazyGrandma
 
 git clone https://github.com/GeneralTesler/deluxe /home/user/OsintTools/deluxe
-pip3 install -r /home/user/OsintTools/deluxe/requirements
+pip3 install -r /home/user/OsintTools/deluxe/requirements.txt
 
 git clone https://github.com/tdh8316/Investigo /home/user/OsintTools/Investigo
 cd /home/user/OsintTools/Investigo && go build
