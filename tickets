@@ -1,5 +1,7 @@
 maryam -e crawler -d $domain
 maryam -e dns_search -d $domain
+maryam -e entry_points -d $domain
+maryam -e wapps -d $domain
 
 aquatone-discover --domain $domain
 aquatone-takeover --domain $domain
