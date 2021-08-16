@@ -154,7 +154,7 @@ cd /home/user/OsintTools/Investigo && go build
 git clone https://github.com/m1n64/MagmaOsint /home/user/OsintTools/MagmaOsint
 python3 -m pip install -r /home/user/OsintTools/MagmaOsint/requirements.txt
 
-git clone https://github.com/nhome/user/OsintToolsrix/lulzbuster /home/user/OsintTools/lulzbuster
+git clone https://github.com/noptrix/lulzbuster /home/user/OsintTools/lulzbuster
 cd /home/user/OsintTools/lulzbuster; make lulzbuster; make install
 
 git clone https://github.com/sham00n/buster /home/user/OsintTools/buster
