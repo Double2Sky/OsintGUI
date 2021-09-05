@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+EMAIL=$(zenity --entry --text="Enter email")
+buster -e $EMAIL 
