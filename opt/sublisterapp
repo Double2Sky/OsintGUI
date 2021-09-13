@@ -45,7 +45,7 @@ if [ ! -z "$domain" ]; then
 				
 	#Run Tool
 	/opt/csitools/decloud $domain | tee /root/Cases/$domain/decloud-$domain.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="De-Cloud search, please wait...")
-36189.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /root/Cases/$domain/tmp-$domain.txt
+		cat /root/Cases/$domain/decloud-$domain.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /root/Cases/$domain/tmp-$domain.txt
 		cat /root/Cases/$domain/tmp-$domain.txt | sed 's/<BR>/\n/' | sort -u > /tmp/tmp.txt
 		cat /tmp/tmp.txt > /root/Cases/$domain/tmp-$domain.txt 
 		rm /tmp/tmp.txt	
