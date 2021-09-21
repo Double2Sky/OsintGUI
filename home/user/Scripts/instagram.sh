@@ -35,7 +35,7 @@ case $socialmenu in
 	mkdir /root/Cases/instaloader
 	cd /root/Cases/instaloader
 	handle=$(zenity --entry --title "Instaloader" --text "Enter Instagram User ID" 2> >(grep -v 'GtkDialog' >&2))
-	instaloader $handle
+	instaloader $handle | zenity --progress --pulsate --no-cancel --auto-close --title="Instaloader" --text="Grabbing all data for: $handle" 2> >(grep -v 'GtkDialog' >&2)
 	thunar /root/Cases/instaloader/$handle/ >/dev/null 2>&1
 	
 esac
