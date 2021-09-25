@@ -1,4 +1,12 @@
 #!/bin/bash
+
+sudo apt-get install software-properties-common       
+sudo modprobe ashmem_linux                                            
+sudo modprobe binder_linux  
+sudo systemctl enable --now snapd apparmor    
+sudo snap install  --devmode --beta anbox      
+anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
+
 sudo apt -y update && sudo apt -y upgrade
 
 sudo apt install -y python3
