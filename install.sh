@@ -9,60 +9,60 @@ anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActi
 
 sudo apt -y update && sudo apt -y upgrade
 
-sudo apt install -y python3
-sudo apt install -y python-setuptools
-sudo apt install -y jq
-sudo apt install -y python3-pip
-sudo apt install -y git
-sudo apt install -y curl
-sudo apt install -y wget
-sudo apt install -y python-all
-sudo apt install -y golang
-sudo apt install -y net-tools
-sudo apt install -y ruby
-sudo apt install -y php
-sudo apt install -y torbrowser-launcher
-sudo apt install -y zsh
-sudo apt install -y docker-compose
-sudo apt install -y webhttrack
-sudo apt install -y libimage-exiftool-perl
-sudo apt install -y maltego
-sudo apt install -y dirbuster
-sudo apt install -y chromium
-sudo apt install -y dmitry
-sudo apt install -y docker-compose
-sudo apt install -y exif
-sudo apt install -y exifprobe
-sudo apt install -y getallurls
-sudo apt install -y gitleaks
-sudo apt install -y konsole
-sudo apt install -y mat2
-sudo apt install -y mc
-sudo apt install -y mediainfo-gui
-sudo apt install -y sublist3r
-sudo apt install -y photon
-sudo apt install -y metagoofil
-sudo apt install -y sherlock
-sudo apt install -y spiderfoot
-sudo apt install -y midori
-sudo apt install -y osrframework
-sudo apt install -y python3-all
-sudo apt install -y stacer
-sudo apt install -y htop
-sudo apt install -y theharvester
-sudo apt install -y webhttrack httrack
-sudo apt install -y eyewitness
-sudo apt install -y whatweb
-sudo apt install -y wig
-sudo apt install -y sslyze
-sudo apt install -y dirb
-sudo apt install -y dirbuster
-sudo apt install -y gem
-sudo apt install -y yad
-sudo apt install -y python3-venv
-sudo apt install -y links2
-sudo apt install -y lynx
-sudo apt install -y libcurl4 libcurl4-openssl-dev
+sudo apt install -y python3 \
+sudo apt install -y python-setuptools \
+sudo apt install -y jq \
+sudo apt install -y python3-pip \
+sudo apt install -y git \
+sudo apt install -y curl \
+sudo apt install -y wget \
+sudo apt install -y python-all \
+sudo apt install -y golang \
+sudo apt install -y net-tools \
+sudo apt install -y ruby \
+sudo apt install -y php \
+sudo apt install -y torbrowser-launcher \
+sudo apt install -y zsh \
+sudo apt install -y docker-compose \
+sudo apt install -y webhttrack \
+sudo apt install -y libimage-exiftool-perl \
+sudo apt install -y maltego \
+sudo apt install -y dirbuster \
+sudo apt install -y chromium \
+sudo apt install -y dmitry \
+sudo apt install -y docker-compose \
+sudo apt install -y exif \
+sudo apt install -y exifprobe \
+sudo apt install -y getallurls \
+sudo apt install -y gitleaks \
+sudo apt install -y konsole \
+sudo apt install -y mat2 \
+sudo apt install -y mc \
+sudo apt install -y mediainfo-gui \
+sudo apt install -y sublist3r \
+sudo apt install -y photon \
+sudo apt install -y metagoofil \
+sudo apt install -y sherlock \
+sudo apt install -y spiderfoot \
+sudo apt install -y midori \
+sudo apt install -y osrframework \
+sudo apt install -y python3-all \
+sudo apt install -y stacer \
+sudo apt install -y htop \
+sudo apt install -y theharvester \
+sudo apt install -y webhttrack httrack \
+sudo apt install -y eyewitness \
+sudo apt install -y whatweb \
+sudo apt install -y wig \
+sudo apt install -y sslyze \
+sudo apt install -y dirb \
+sudo apt install -y dirbuster \
+sudo apt install -y gem \
+sudo apt install -y yad \
+sudo apt install -y python3-venv \
+sudo apt install -y links2 \
+sudo apt install -y lynx \
+sudo apt install -y libcurl4 libcurl4-openssl-dev \
 sudo apt install -y cargo
 
 
