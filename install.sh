@@ -180,6 +180,9 @@ git clone https://github.com/dalunacrobate/DaProfiler
 
 git clone https://github.com/amitrajputfff/Profil3r
 
+git clone https://github.com/googleinurl/SCANNER-INURLBR
+
+
 git clone https://github.com/1N3/Sn1per /home/user/OsintTools/Sn1per
 
 #git clone https://github.com/sundowndev/PhoneInfoga /home/user/OsintTools/PhoneInfoga
