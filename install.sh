@@ -224,7 +224,7 @@ git clone https://github.com/mxrch/GHunt /home/user/OsintTools/GHunt
 
 git clone https://github.com/Zarcolio/sitedorks /home/user/OsintTools/sitedorks
 
-
+git clone https://github.com/ThomasPWy/drwho.sh
 
 
 git clone https://github.com/CybernetiX-S3C/InfoSploit 
