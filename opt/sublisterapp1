@@ -1,0 +1,52 @@
+#!/bin/bash
+
+
+domain=$(zenity --entry --width=300 --title "Sublist3r" --text "Enter target domain name" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
+mkdir /home/user/Cases/$domain
+		#Run Tool
+		sublist3r -d $domain -v -o /home/user/Cases/$domain/sublister.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Sublist3r search, please wait...")
+		sed -i 's/<BR>/\n/' /home/user/Cases/$domain/sublist3r.txt
+		cat /home/user/Cases/$domain/sublist3r.txt | sort -u | tee -a /home/user/Cases/$domain/tmp-$domain.txt
+		cat /home/user/Cases/$domain/tmp-$domain.txt | sort -u > /tmp/tmp.txt
+		cat /tmp/tmp.txt > /home/user/Cases/$domain/tmp-$domain.txt 
+		rm /tmp/tmp.txt
+				
+	#Run Tool
+	theHarvester -d $domain -b all -f /home/user/Cases/$domain/theharvester.html |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="theHarvester search, please wait...")
+	if [ -f /home/user/Cases/theharvester.html  ]; then
+		screen -d -m firefox /home/user/Cases/theharvester.html	
+	fi
+	
+	#Run Tool
+	photon -u $domain -v -l 3 -t 100 -o /home/user/Cases/$domain |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="photon search, please wait...")
+
+	#Run Tool
+	lynx -dump $domain | tee -a /home/user/Cases/$domain/site-links.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="lynx search, please wait...")
+	
+	#Run Tool
+	amass intel -whois -ip -src -d $domain  -o /home/user/Cases/$domain/amass1.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Amass intel search, please wait...")
+	amass enum -src -brute -d $domain -o /home/user/Cases/$domain/amass2.txt -d $domain |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Amass enum search, please wait...")
+				
+	#Run Tool
+	    /home/user/Scripts/decloud $domain | tee /home/user/Cases/$domain/decloud.txt |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="De-Cloud search, please wait...")
+		cat /home/user/Cases/$domain/decloud.txt | grep "Checking" | cut -d" " -f4 | sed 's/<BR>/\n/' | sort -u | tee -a /home/user/Cases/$domain/tmp-$domain.txt
+		cat /home/user/Cases/$domain/tmp-$domain.txt | sed 's/<BR>/\n/' | sort -u > /tmp/tmp.txt
+		cat /tmp/tmp.txt > /home/user/Cases/$domain/tmp-$domain.txt 
+		rm /tmp/tmp.txt	
+		gedit /home/user/Cases/$domain/tmp-$domain.txt &		
+
+        FILE="/home/user/Cases/$domain/tmp-$domain.txt"
+	if zenity --question --text="Would you like to open the findings in a browser?"; then
+		while read links; do 
+		    echo "Opening: $links"; screen -d -m firefox $links
+		done < $FILE
+		echo "Please wait for Firefox to open..."
+	else
+		echo "Done."
+	fi 
+
+	#Run Tool 
+#	mkdir /home/user/Cases/$domain/download-files
+#	metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/$domain/download-files" |tee >(zenity --progress --pulsate --no-cancel --auto-close --text="Metagoofil download files, please wait...")
+#	thunar /home/user/Cases/$domain >/dev/null 2>&1
+#	exit
