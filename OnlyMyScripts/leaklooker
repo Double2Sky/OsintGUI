@@ -1,0 +1,6 @@
+#!/bin/bash
+redis-server &
+cd /home/user/Tools/LeakLooker-X/
+python3 manage.py runserver &
+celery worker -A leaklooker --loglevel=info &
+firefox http://localhost:8000/
