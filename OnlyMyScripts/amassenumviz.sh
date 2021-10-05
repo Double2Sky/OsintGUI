@@ -25,7 +25,7 @@ amass enum -passive -d "$domain" | tee -a amass-"$domain"-sub.txt
 amass enum -active -d "$domain" | tee -a amass-"$domain"-sub.txt
 amass viz -d3 -d "$domain" -o "$HOME/Cases/$domain"
 
-screen -d -m firefix "$HOME/Cases/$domain/amass_d3.html"
+screen -d -m firefox "$HOME/Cases/$domain/amass_d3.html"
 
 FILE="amass-"$domain"-sub.txt"
 
