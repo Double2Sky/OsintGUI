@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 ##Metagoofil Menu Script
 #define choices
 opt1="Metagoofil-Only"
@@ -13,13 +12,13 @@ case $domainmenu in
 			#verify legit domain
 			if [[ $domain =~ $fqdnregex ]]; then
 				#Run Tool
-				mkdir /root/Cases/Metagoofil
-				mkdir /root/Cases/Metagoofil/"$timestamp"_docs_"$domain"
-				mkdir /root/Cases/Metagoofil/"$timestamp"_results_"$domain"
+				mkdir /home/user/Cases/Metagoofil
+				mkdir /home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain"
+				mkdir /home/user/Cases/Metagoofil/"$timestamp"_results_"$domain"
 				sleep 1
-				metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/root/Cases/Metagoofil/"$timestamp"_docs_"$domain""
+				python3 /home/user/Tools/metagoofil/metagoofil.py -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain""
 				sleep 1
-				thunar "/root/Cases/Metagoofil/" >/dev/null 2>&1
+				thunar "/home/user/Cases/Metagoofil/" >/dev/null 2>&1
 				exit
 				fi
 			else
@@ -33,15 +32,15 @@ case $domainmenu in
 			#verify legit domain
 			if [[ $domain =~ $fqdnregex ]]; then
 				#Run Tool
-				mkdir /root/Cases/Metagoofil
-				mkdir /root/Cases/Metagoofil/"$timestamp"_docs_"$domain"
-				mkdir /root/Cases/Metagoofil/"$timestamp"_results_"$domain"
+				mkdir /home/user/Cases/Metagoofil
+				mkdir /home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain"
+				mkdir /home/user/Cases/Metagoofil/"$timestamp"_results_"$domain"
 				sleep 1
-				metagoofil -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/root/Cases/Metagoofil/"$timestamp"_docs_"$domain""
+				python3 /home/user/Tools/metagoofil/metagoofil.py -d $domain -w -t pdf,doc,xls,ppt,docx,xlsx,pptx -o "/home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain""
 				sleep 1
-				if [[ $(find "/root/Cases/Metagoofil/"$timestamp"_docs_"$domain"" -maxdepth 1 -type f) ]]; then
-					find "/root/Cases/Metagoofil/"$timestamp"_docs_"$domain"" -maxdepth 1 -type f | exiftool /root/Cases/Metagoofil/"$timestamp"_docs_"$domain"/* -csv > /root/Cases/Metagoofil/"$timestamp"_results_"$domain"/Report.csv
-				thunar "/root/Cases/Metagoofil" >/dev/null 2>&1
+				if [[ $(find "/home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain"" -maxdepth 1 -type f) ]]; then
+					find "/home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain"" -maxdepth 1 -type f | exiftool /home/user/Cases/Metagoofil/"$timestamp"_docs_"$domain"/* -csv > ~/Cases/Metagoofil/"$timestamp"_results_"$domain"/Report.csv
+				thunar "/home/user/Cases/Metagoofil" >/dev/null 2>&1
 				exit
 				else
 					echo "No files found for parsing, exiting"
@@ -54,3 +53,4 @@ case $domainmenu in
 		fi
 ;;
 esac
+
