@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+#Script for ffmpeg interaction
+
+zenity --info --text="The next window will prompt for a target media file" --title="Video Utilities"
+
+sleep 1
+
+#prompt for file selection
+ffmpeg_file=$(zenity --file-selection --title "Video Utilities")
 timestamp=$(date +%Y-%m-%d:%H:%M)
 
 #define choices
@@ -22,29 +31,29 @@ if [ -n "$ffmpeg_file" ]; then
           ffplay "$ffmpeg_file"
           ;;
         $opt2 )
-          ffmpeg -i "$ffmpeg_file" -vcodec mpeg4 -strict -2 "/root/Cases/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Converting Video to mp4"
-           nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          ffmpeg -i "$ffmpeg_file" -vcodec mpeg4 -strict -2 "/home/user/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Converting Video to mp4"
+           nautilus "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt3 )
-          mkdir "/root/Cases/Videos/$timestamp-frames"
-          ffmpeg -y -i "$ffmpeg_file" -an -r 10 "/root/Cases/Videos/$timestamp-frames/img%03d.bmp" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Frames"
-          nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          mkdir "/home/user/Videos/$timestamp-frames"
+          ffmpeg -y -i "$ffmpeg_file" -an -r 10 "/home/user/Videos/$timestamp-frames/img%03d.bmp" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Frames"
+          nautilus "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt4 )
-          ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.003),setpts=N/(25*TB)" "//root/Cases/Videos/$timestamp-low.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (Low Activity)"
-          nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.003),setpts=N/(25*TB)" "/home/user/Videos/$timestamp-low.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (Low Activity)"
+          nautilus "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt5 )
-          ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.005),setpts=N/(25*TB)" "/root/Cases/Videos/$timestamp-high.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (High Activity)"
-          nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.005),setpts=N/(25*TB)" "/home/user/Videos/$timestamp-high.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (High Activity)"
+          nautilus "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt6 )
-          ffmpeg -i "$ffmpeg_file" -vn -ac 2 -ar 44100 -ab 320k -f mp3 "/root/Cases/Videos/$timestamp.mp3" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Audio"
-           nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          ffmpeg -i "$ffmpeg_file" -vn -ac 2 -ar 44100 -ab 320k -f mp3 "/home/user/Videos/$timestamp.mp3" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Audio"
+           nautilus "/home/user/Videos/" >/dev/null 2>&1
 	  ;;
         $opt7 )
-          ffmpeg -i "$ffmpeg_file" -vf transpose=0 "/root/Cases/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Rotating Video"
-           nautilus "/root/Cases/Videos/" >/dev/null 2>&1
+          ffmpeg -i "$ffmpeg_file" -vf transpose=0 "/home/user/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Rotating Video"
+           nautilus "/home/user/Videos/" >/dev/null 2>&1
         esac
 
 else
