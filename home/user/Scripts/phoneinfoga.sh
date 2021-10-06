@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 phoneinfoga serve &
-firefox http://127.0.0.1:5000
+sleep 3
+firefox "http://127.0.0.1:5000"
