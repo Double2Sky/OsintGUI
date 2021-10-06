@@ -32,31 +32,32 @@ if [ -n "$ffmpeg_file" ]; then
           ;;
         $opt2 )
           ffmpeg -i "$ffmpeg_file" -vcodec mpeg4 -strict -2 "/home/user/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Converting Video to mp4"
-           nautilus "/home/user/Videos/" >/dev/null 2>&1
+           thunar "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt3 )
           mkdir "/home/user/Videos/$timestamp-frames"
           ffmpeg -y -i "$ffmpeg_file" -an -r 10 "/home/user/Videos/$timestamp-frames/img%03d.bmp" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Frames"
-          nautilus "/home/user/Videos/" >/dev/null 2>&1
+          thunar "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt4 )
           ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.003),setpts=N/(25*TB)" "/home/user/Videos/$timestamp-low.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (Low Activity)"
-          nautilus "/home/user/Videos/" >/dev/null 2>&1
+          thunar "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt5 )
           ffmpeg -i "$ffmpeg_file" -strict -2 -vf "select=gt(scene\,0.005),setpts=N/(25*TB)" "/home/user/Videos/$timestamp-high.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Shortening video (High Activity)"
-          nautilus "/home/user/Videos/" >/dev/null 2>&1
+          thunar "/home/user/Videos/" >/dev/null 2>&1
           ;;
         $opt6 )
           ffmpeg -i "$ffmpeg_file" -vn -ac 2 -ar 44100 -ab 320k -f mp3 "/home/user/Videos/$timestamp.mp3" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Extracting Audio"
-           nautilus "/home/user/Videos/" >/dev/null 2>&1
+           thunar "/home/user/Videos/" >/dev/null 2>&1
 	  ;;
         $opt7 )
           ffmpeg -i "$ffmpeg_file" -vf transpose=0 "/home/user/Videos/$timestamp.mp4" | zenity --progress --pulsate --no-cancel --auto-close --title="ffmpeg" --text="Rotating Video"
-           nautilus "/home/user/Videos/" >/dev/null 2>&1
+           thunar "/home/user/Videos/" >/dev/null 2>&1
         esac
 
 else
     zenity --error --text "No file selected, exiting"
     exit
 fi
+
