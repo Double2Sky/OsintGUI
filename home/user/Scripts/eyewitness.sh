@@ -9,7 +9,8 @@
 	$opt1 ) #Single
 		domain=$(zenity --entry --title "EyeWitness" --text "Enter target URL (ex: https://www.google.com)" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
 		if [ -n "$domain" ]; then
-		eyewitness --web --single "$domain" -d /root/Cases/EyeWitness/
+		cd /home/user/Tools/EyeWitness/Python
+		python3 ./EyeWitness.py --web --single "$domain" -d ~/Cases/
 		else
 		zenity --error --text "No URL entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
 		exit
@@ -17,9 +18,11 @@
 	$opt2 ) #Multiple
 		eyewitness_file=$(zenity --file-selection --title "URL List" --text "Select File of URLs" 2> >(grep -v 'GtkDialog' >&2))
 		if [ -n "$eyewitness_file" ]; then
-		eyewitness --web -f "$eyewitness_file" -d /root/Cases/EyeWitness/ 
+		cd /home/user/Tools/EyeWitness/Python
+		python3 ./EyeWitness.py --web -f "$eyewitness_file" -d ~/Cases/ 
 		else
 		zenity --error --text "No file found, exiting" 2> >(grep -v 'GtkDialog' >&2)
 		exit
 		fi
 	esac
+
