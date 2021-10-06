@@ -16,14 +16,14 @@ case $socialmenu in
 
 	  if [ -n "$handle" ]; then
 
-		if [ ! -d "/root/Cases/instalooter/$timestamp-$handle/" ]; then
+		if [ ! -d "/home/user/Cases/instalooter/$timestamp-$handle/" ]; then
      	  
-	           mkdir /root/Cases/instalooter/$timestamp-$handle/
+	           mkdir /home/user/Cases/instalooter/$timestamp-$handle/
  		fi
 
-	  instalooter user $handle /root/Cases/instalooter/$timestamp-$handle/ -v -m -d -e 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Instalooter" --text="Grabbing all photos for: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  instalooter user $handle /home/user/Cases/instalooter/$timestamp-$handle/ -v -m -d -e 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Instalooter" --text="Grabbing all photos for: $handle" 2> >(grep -v 'GtkDialog' >&2)
 	  
-	thunar /root/Cases/instalooter/$timestamp-$handle/ >/dev/null 2>&1
+	  thunar /home/user/Cases/instalooter/$timestamp-$handle/ >/dev/null 2>&1
 
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
@@ -32,10 +32,10 @@ case $socialmenu in
 	  
 	;;
 	$opt2) #Instaloader
-	mkdir /root/Cases/instaloader
-	cd /root/Cases/instaloader
+	mkdir ~/Cases/instaloader
+	cd ~/Cases/instaloader
 	handle=$(zenity --entry --title "Instaloader" --text "Enter Instagram User ID" 2> >(grep -v 'GtkDialog' >&2))
 	instaloader $handle | zenity --progress --pulsate --no-cancel --auto-close --title="Instaloader" --text="Grabbing all data for: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	thunar /root/Cases/instaloader/$handle/ >/dev/null 2>&1
+	thunar /home/user/Cases/instaloader/$handle/ >/dev/null 2>&1
 	
 esac
