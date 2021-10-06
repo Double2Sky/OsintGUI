@@ -17,11 +17,11 @@ case $socialmenu in
 	$opt1 ) 
 	handle=$(zenity --entry --title "Download Tweets from User" --text "Enter Twitter Username" 2> >(grep -v 'GtkDialog' >&2))
 	  if [ -n "$handle" ]; then
-		if [ ! -d "/root/Cases/$timestamp-$handle/" ]; then
-	           mkdir /root/Cases/$timestamp-$handle/
+		if [ ! -d "/home/user/Cases/$timestamp-$handle/" ]; then
+	           mkdir /home/user/Cases/$timestamp-$handle/
  		fi
-	  twint -u $handle -o /root/Cases/$timestamp-$handle/$handle.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Tweets from: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	  thunar /root/Cases/Documents/$timestamp-$handle/ >/dev/null 2>&1
+	  twint -u $handle -o /home/user/Cases/$timestamp-$handle/$handle.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Tweets from: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  thunar /home/user/Cases/$timestamp-$handle/ >/dev/null 2>&1
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
     		exit
@@ -29,11 +29,11 @@ case $socialmenu in
 	$opt2 ) 
 	handle=$(zenity --entry --title "Download Followers for User" --text "Enter Twitter Username" 2> >(grep -v 'GtkDialog' >&2))
 	  if [ -n "$handle" ]; then
-		if [ ! -d "/root/Cases/$timestamp-$handle/" ]; then
-     	           mkdir /root/Cases/$timestamp-$handle/
+		if [ ! -d "/home/user/Cases/$timestamp-$handle/" ]; then
+     	           mkdir /home/user/Cases/$timestamp-$handle/
  		fi
-	  twint -u $handle --followers -o /root/Cases/$timestamp-$handle/$handle-followers.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Followers of: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	  thunar /root/Cases/$timestamp-$handle/ >/dev/null 2>&1
+	  twint -u $handle --followers -o /home/user/Cases/$timestamp-$handle/$handle-followers.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Followers of: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  thunar /home/user/Cases/$timestamp-$handle/ >/dev/null 2>&1
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
     		exit
@@ -41,11 +41,11 @@ case $socialmenu in
 	$opt3 ) 
 	handle=$(zenity --entry --title "Download Profiles Followed by User" --text "Enter Twitter Username" 2> >(grep -v 'GtkDialog' >&2))
 	  if [ -n "$handle" ]; then
-		if [ ! -d "/root/Cases/$timestamp-$handle/" ]; then
-     	             mkdir /root/Cases/$timestamp-$handle/
+		if [ ! -d "/home/user/Cases/$timestamp-$handle/" ]; then
+     	             mkdir /home/user/Cases/$timestamp-$handle/
  		fi
-	  twint -u $handle --following -o /home/osint/Documents/$timestamp-$handle/$handle-following.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Follows of: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	  thunar /root/Cases/$timestamp-$handle/ >/dev/null 2>&1
+	  twint -u $handle --following -o /home/user/Cases/$timestamp-$handle/$handle-following.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Follows of: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  thunar /home/user/Cases/$timestamp-$handle/ >/dev/null 2>&1
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
     		exit
@@ -53,11 +53,11 @@ case $socialmenu in
 	$opt4 ) 
 	handle=$(zenity --entry --title "Download Favorites from User" --text "Enter Twitter Username" 2> >(grep -v 'GtkDialog' >&2))
 	  if [ -n "$handle" ]; then
-		if [ ! -d "/root/Cases/$timestamp-$handle/" ]; then
-  	           mkdir /root/Cases/$timestamp-$handle/
+		if [ ! -d "/home/user/Cases/$timestamp-$handle/" ]; then
+  	           mkdir /home/user/Cases/$timestamp-$handle/
  		fi
-	  twint -u $handle --favorites -o /home/osint/Documents/$timestamp-$handle/$handle-favorites.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Favorites from: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	  thunar /root/Cases/$timestamp-$handle/ >/dev/null 2>&1
+	  twint -u $handle --favorites -o /home/user/Cases/$timestamp-$handle/$handle-favorites.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Favorites from: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  thunar /home/user/Cases/$timestamp-$handle/ >/dev/null 2>&1
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
     		exit
@@ -65,13 +65,14 @@ case $socialmenu in
 	$opt5 ) 
 	handle=$(zenity --entry --title "Search a Keyword" --text "Enter Keyword" 2> >(grep -v 'GtkDialog' >&2))
 	  if [ -n "$handle" ]; then
-		if [ ! -d "/root/Cases/$timestamp-$handle/" ]; then
-	           mkdir /root/Cases/timestamp-$handle/
+		if [ ! -d "/home/user/Cases/$timestamp-$handle/" ]; then
+	           mkdir /home/user/Cases/$timestamp-$handle/
  		fi
-	  twint -s $handle -o /home/osint/Documents/$timestamp-$handle/$handle-keyword.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Search Results of: $handle" 2> >(grep -v 'GtkDialog' >&2)
-	  thunar /root/Cases/$timestamp-$handle/ >/dev/null 2>&1
+	  twint -s $handle -o /home/user/Cases/$timestamp-$handle/$handle-keyword.csv --csv 2>/dev/null | zenity --progress --pulsate --no-cancel --auto-close --title="Twint" --text="Downloading Search Results of: $handle" 2> >(grep -v 'GtkDialog' >&2)
+	  thunar /home/user/Cases/$timestamp-$handle/ >/dev/null 2>&1
 	  else
 	  	zenity --error --text "No handle entered, exiting" 2> >(grep -v 'GtkDialog' >&2)
     		exit
 	  fi
 esac
+
