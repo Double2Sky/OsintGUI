@@ -5,10 +5,10 @@ CompleteDNS_Login='email@mail.com|password'
 if [[ -f cuf-domain.tmp ]]; then
 	rm cuf-domain.tmp
 elif [[ -f cuf-ipaddr.tmp ]]; then
-	rm cuf-ipaddr.tmp
+	rm cuf-ipaddr.tm
 fi
 
-DOMAIN=$1
+DOMAIN=$(zenity --entry --title "EyeWitness" --text "Enter target DOMAIN" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
 
 if [[ -z $(dig +short ${DOMAIN}) ]]; then
 	if [[ -z $(whois ${DOMAIN} | grep -i 'Domain Name:') ]]; then
@@ -18,7 +18,7 @@ if [[ -z $(dig +short ${DOMAIN}) ]]; then
 fi
 
 function Dig() {
-	D=$1
+	D=$DOMAIN
 	echo " INFO: Checking ${D}"
 	for DMN in $(dig +short ${D} | grep '[.]'$ | sed 's/[.]$//g' | sort -V | uniq)
 	do
@@ -35,8 +35,8 @@ Dig ${DOMAIN}
 
 i=0
 c=0
-max=$(cat `dirname $(realpath $0)`/subdomains.txt | wc -l)
-for SUBD in $(cat `dirname $(realpath $0)`/subdomains.txt)
+max=$(cat /home/user/Scripts/subdomains.txt | wc -l)
+for SUBD in $(cat /home/user/Scripts/subdomains.txt )
 do
 	((i++))
 	SUBDOMAIN=${SUBD}.${DOMAIN}
@@ -51,7 +51,7 @@ do
 done
 
 function ViewDNS() {
-	DMN="${1}"
+	DMN="${DOMAIN}"
 	if [[ -f viewdns.tmp ]]; then
 		rm viewdns.tmp
 	fi
@@ -65,3 +65,5 @@ function ViewDNS() {
 	fi
 	rm viewdns.tmp
 }
+
+ViewDNS ${DOMAIN}
