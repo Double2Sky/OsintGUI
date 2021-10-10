@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+cd /Tools/sherloq/gui && /home/user/.virtualenvs/sq/bin/python3 sherloq.py &
+notify-send -i "/usr/share/icons/tsurugi/sherloq.png" "Sherloq is starting, please wait..."
