@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-cd /Tools/sherloq/gui && /home/user/.virtualenvs/sq/bin/python3 sherloq.py &
+cd $HOME/Tools/sherloq/gui && $HOME/.virtualenvs/sq/bin/python3 sherloq.py &
 notify-send -i "/home/user/Pictures/icons/sherloq.png" "Sherloq is starting, please wait..."
