@@ -1,0 +1,62 @@
+#!/usr/bin/bash
+
+domain=$(zenity --entry --title "Reconky" --text "Enter domain DOMAIN" --entry-text "" 2> >(grep -v 'GtkDialog' >&2))
+mkdir "$HOME/Cases/$domain"
+
+assetfinder "$domain" | tee -a  "$HOME/Cases/$domain/subdomains.txt"
+< "$HOME/Cases/$domain/subdomains.txt" grep "$domain" | tee -a "$HOME/Cases/$domain/subdomains_all.txt"
+echo
+sublist3r -d "$domain" -v -t 100 -o "$HOME/Cases/$domain/subdomains1.txt"
+< "$HOME/Cases/$domain/subdomains1.txt" grep "$domain" | tee -a "$HOME/Cases/$domain/subdomains_all.txt"
+echo
+amass enum -d "$domain" -o "$HOME/Cases/$domain/subdomains2.txt"
+< "$HOME/Cases/$domain/subdomains2.txt" grep "$domain" | tee -a "$HOME/Cases/$domain/subdomains_all.txt"
+echo
+echo
+knockpy "$domain" | tee -a "$HOME/Cases/$domain/subdomains3.txt"
+awk '/$domain/ {print}' "$HOME/Cases/$domain/subdomains3.txt" | cut -d " " -f 9 | tee -a "$HOME/Cases/$domain/subdomains_all.txt"
+echo
+< "$HOME/Cases/$domain/subdomains_all.txt" sort -u | httprobe | sed -E 's/^\s*.*:\/\///g' | sort -u | tee -a "$HOME/Cases/$domain/subdomains_alive.txt"
+echo
+
+subjack -w "$HOME/Cases/$domain/subdomains_all.txt" -t 70 -timeout 25 -ssl -c /home/user/Tools/subjack/fingerprints.json -v 3 -o "$HOME/Cases/$domain/subdomains_takeover.txt"
+echo
+nmap -iL "$HOME/Cases/$domain/subdomains_alive.txt" -T4 -oA "$HOME/Cases/$domain/subdomains_scan.txt"
+echo
+
+< "$HOME/Cases/$domain/subdomains_all.txt"  waybackurls | tee -a "$HOME/Cases/$domain/way.txt"
+
+sort -u "$HOME/Cases/$domain/way.txt"
+< $"$HOME/Cases/$domain/way.txt" grep '?*=' | cut -d '=' -f 1 | sort -u | tee -a "$HOME/Cases/$domain/params.txt"
+
+for i in $(cat "$HOME/Cases/$domain/params.txt");do echo "$i"'=';done
+echo
+for i in $(cat "$HOME/Cases/$domain/way.txt");do
+	ext="${i##*.}"
+	if [[ "$ext" == "php" ]];then
+		echo "$i" >> "$HOME/Cases/$domain/php1.txt"
+		sort -u "$HOME/Cases/$domain/php1.txt" >> "$HOME/Cases/$domain/php.txt"
+		rm "$HOME/Cases/$domain/php1.txt"
+	fi
+	if [[ "$ext" == "js" ]];then
+		echo "$i" >> "$HOME/Cases/$domain/js1.txt"
+		sort -u "$HOME/Cases/$domain/js1.txt" >> "$HOME/Cases/$domain/js.txt"
+		rm "$HOME/Cases/$domain/js1.txt"
+	fi
+	if [[ "$ext" == "html" ]];then
+		echo "$i" >> "$HOME/Cases/$domain/html1.txt"
+		sort -u "$HOME/Cases/$domain/html1.txt" >> "$HOME/Cases/$domain/html.txt"
+		rm "$HOME/Cases/$domain/html1.txt"
+	fi
+	if [[ "$ext" == "json" ]];then
+		echo "$i" >> "$HOME/Cases/$domain/json1.txt"
+		sort -u "$HOME/Cases/$domain/json1.txt" >> "$HOME/Cases/$domain/json.txt"
+		rm "$HOME/Cases/$domain/json1.txt"
+	fi
+	if [[ "$ext" == "aspx" ]];then
+		echo "$i" >> "$HOME/Cases/$domain/aspx1.txt"
+		sort -u "$HOME/Cases/$domain/aspx1.txt" >> "$HOME/Cases/$domain/aspx.txt"
+		rm "$HOME/Cases/$domain/aspx1.txt"
+	fi
+done
+eyewitness -f "$HOME/Cases/$domain/subdomains_alive.txt" -F -P "$HOME/Cases/$domain/eyewitness" 
