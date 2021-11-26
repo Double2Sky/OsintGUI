@@ -1,0 +1,24 @@
+param([string]$param1 = "param1")
+param([string]$a = "_0")
+param([string]$aa = "_00")
+
+    start chrome "https://vk.com/feed?obj=$param1&q=&section=mentions"
+    start chrome "https://vk.com/photos$param1?act=comments"
+    start chrome "https://vk.com/video/@id$param1"
+    start chrome "https://vk.com/photos$param1"
+    start chrome "https://vk.com/album$param1$a"
+    start chrome "https://vk.com/album$param1$aa"
+    start chrome "https://vk.com/feed?section=source&source=$param1"
+    start chrome "https://vk.com/notes$param1"
+    start chrome "https://vk.com/friends?id=$param1&section=subscribers"
+    start chrome "https://vk.com/friends?id=$param1&section=phonebook"
+    start chrome "https://bigbookname.com/user/id-$param1"
+    start chrome "https://vk.com/foaf.php?id=$param1"
+    start chrome "https://webcache.googleusercontent.com/search?q=cache:vk.com/id$param1"
+    start chrome "https://web.archive.org/web/*/https://vk.com/id$param1"
+    start chrome "https://web.archive.org/web/*/https://m.vk.com/id$param1"
+    start chrome "https://archive.md/http://vk.com/id$param1"
+    start chrome "https://webcache.googleusercontent.com/search?q=cache:vkontakte.ru/id$param1"
+    start chrome "https://web.archive.org/web/*/https://vkontakte.ru/id$param1"
+    start chrome "https://archive.md/http://vkontakte.ru/id$param1"
+    start chrome "https://yandex.ru/search/?text=%22id$param1%22&lr=213&redircnt=1637951417.1"
