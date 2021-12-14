@@ -93,6 +93,7 @@ pipx install social-analyzer
 pipx install waybackpack
 pipx install git+https://github.com/kisestu/Search4
 pipx install git+https://github.com/domainaware/checkdmarc.git
+pipx install whoogle-search
 
 export GO111MODULE=on
 GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
@@ -175,6 +176,8 @@ git clone -q -b master https://github.com/twelvesec/gasmask.git /home/user/Osint
 python3 -m pip install --progress-bar off -r /home/user/OsintTools/gasmask/requirements.txt
 
 git clone https://github.com/Lucksi/Mr.Holmes /home/user/OsintTools/Mr.Holmes
+
+git clone https://github.com/Scorpio28-Oficial/phonia
 
 git clone https://github.com/dalunacrobate/DaProfiler
 
