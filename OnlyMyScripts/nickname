@@ -41,6 +41,6 @@ case $nicknamemenu in
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             snoop -w "$nickname" -t 9
-                thunar "/home/user/snoop/results"
+                thunar "/home/user/snoop/results" >/dev/null 2>&1
         ;;
 esac
