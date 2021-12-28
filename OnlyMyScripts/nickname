@@ -35,12 +35,13 @@ case $nicknamemenu in
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             python3 /home/user/Tools/marple/marple.py --engines {dogpile,aol,yahoo,baidu,ask,duckduckgo,qwant,paginated,bing,torch,yandex,google,startpage,naver} --plugins {socid_extractor,metadata} --csv "/home/user/Cases/Nickname/$nickname/$nickname.csv" "$nickname"
+            thunar "/home/user/Cases/Nickname/$nickname" >/dev/null 2>&1
         ;;
 
     "$opt5" ) 
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             snoop -w "$nickname" -t 9
-                thunar "/home/user/snoop/results" >/dev/null 2>&1
+            thunar "/home/user/snoop/results" >/dev/null 2>&1
         ;;
 esac
