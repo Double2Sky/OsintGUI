@@ -5,8 +5,9 @@ opt2="Investigo"
 opt3="Nexfil"
 opt4="Marple"
 opt5="Snoop"
+opt6="Mailcat"
 
-nicknamemenu=$(zenity  --list  --title "Nickname Tools" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" 2> >(grep -v 'GtkDialog' >&2)) 
+nicknamemenu=$(zenity  --list  --title "Nickname Tools" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" FALSE "$opt6" 2> >(grep -v 'GtkDialog' >&2)) 
 
 case $nicknamemenu in
     "$opt1" ) #Maigret
@@ -28,7 +29,7 @@ case $nicknamemenu in
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             python3 /home/user/Tools/nexfil/nexfil.py -u "$nickname" | tee -a "/home/user/Cases/Nickname/$nickname/$nickname.txt"
-            micro "/home/user/Cases/Nickname/$nickname/$nickname.txt"
+            gedit "/home/user/Cases/Nickname/$nickname/$nickname.txt"
         ;;
 
     "$opt4" ) #Marple
@@ -38,10 +39,17 @@ case $nicknamemenu in
             thunar "/home/user/Cases/Nickname/$nickname" >/dev/null 2>&1
         ;;
 
-    "$opt5" ) 
+    "$opt5" ) #snoop
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             snoop -w "$nickname" -t 9
-            thunar "/home/user/snoop/results" >/dev/null 2>&1
+                thunar "/home/user/snoop/results" >/dev/null 2>&1
+        ;;
+
+    "$opt6" ) #Mailcat
+        nickname=$(zenity --entry --text="Enter NickName")
+        mkdir -p "/home/user/Cases/Nickname/$nickname"
+            python3 /home/user/Tools/mailcat/mailcat.py "$nickname" | tee -a "/home/user/Cases/Nickname/$nickname/$nickname.txt"
+                gedit "/home/user/Cases/Nickname/$nickname/$nickname.txt"
         ;;
 esac
