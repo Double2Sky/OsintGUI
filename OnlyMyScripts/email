@@ -1,0 +1,26 @@
+#!/bin/bash
+
+opt1="Holehe"
+opt2="SocialScan"
+opt3="Mosint"
+
+
+emailmenu=$(zenity  --list  --title "Email Tools" --text "What do you want to do?" --width=400 --height=300 --radiolist  --column "Choose" --column "Option" TRUE "$opt1" FALSE "$opt2" FALSE "$opt3" FALSE "$opt4" FALSE "$opt5" 2> >(grep -v 'GtkDialog' >&2)) 
+
+case $emailmenu in
+    "$opt1" ) #Holehe
+        email=$(zenity --entry --text="Enter Email")
+        mkdir -p "/home/user/Cases/Email/$email"
+            cd "/home/user/Cases/Email/$email" || exit
+            holehe "$email" --csv
+            thunar "/home/user/Cases/Email/$email"  >/dev/null 2>&1
+        ;;
+    
+    "$opt2" ) #SocialScan
+        email=$(zenity --entry --text="Enter Email")
+        mkdir -p "/home/user/Cases/Email/$email"
+            socialscan "$email" --json "/home/user/Cases/Email/$email/$email.txt"
+                gedit "/home/user/Cases/Email/$email/$email.txt"
+        ;;
+
+esac        
