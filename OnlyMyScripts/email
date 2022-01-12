@@ -22,5 +22,13 @@ case $emailmenu in
             socialscan "$email" --json "/home/user/Cases/Email/$email/$email.txt"
                 gedit "/home/user/Cases/Email/$email/$email.txt"
         ;;
+    
+    "$opt3" ) #Mosint
+        email=$(zenity --entry --text="Enter Email")
+        mkdir -p "/home/user/Cases/Email/$email"
+            cd "/home/user/Tools/mosint" || exit
+             go run main.go -e "$email" -all | tee -a "/home/user/Cases/Email/$email/$email.txt"
+                gedit "/home/user/Cases/Email/$email/$email.txt"
+        ;;
 
-esac        
+esac   
