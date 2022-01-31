@@ -13,9 +13,10 @@ case $nicknamemenu in
     "$opt1" ) #Maigret
         nickname=$(zenity --entry --text="Enter NickName")
         mkdir -p "/home/user/Cases/Nickname/$nickname"
-            maigret "$nickname" -a -T --with-domains --folderoutput "/home/user/Cases/Nickname/$nickname" -vv
+            maigret "$nickname" --folderoutput "/home/user/Cases/Nickname/$nickname" -v
             thunar "/home/user/Cases/Nickname/$nickname" >/dev/null 2>&1
-            openlinks "/home/user/Cases/Nickname/$nickname/report_$nickname.txt"
+            openlinks "/home/user/Cases/Nickname/$nickname/$nickname.txt"
+            read
         ;;
 
     "$opt2" ) #Investigo
@@ -23,6 +24,7 @@ case $nicknamemenu in
         mkdir -p "/home/user/Cases/Nickname/$nickname"; cd "/home/user/Cases/Nickname/$nickname" || exit 
             investigo "$nickname" -s -d -v
             thunar "/home/user/Cases/Nickname/$nickname/screenshots/$nickname" >/dev/null 2>&1
+            read
         ;;
 
     "$opt3" ) #Nexfil
@@ -30,6 +32,7 @@ case $nicknamemenu in
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             python3 /home/user/Tools/nexfil/nexfil.py -u "$nickname" | tee -a "/home/user/Cases/Nickname/$nickname/$nickname.txt"
             gedit "/home/user/Cases/Nickname/$nickname/$nickname.txt"
+            read
         ;;
 
     "$opt4" ) #Marple
@@ -37,6 +40,7 @@ case $nicknamemenu in
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             python3 /home/user/Tools/marple/marple.py --engines {dogpile,aol,yahoo,baidu,ask,duckduckgo,qwant,paginated,bing,torch,yandex,google,startpage,naver} --plugins {socid_extractor,metadata} --csv "/home/user/Cases/Nickname/$nickname/$nickname.csv" "$nickname"
             thunar "/home/user/Cases/Nickname/$nickname" >/dev/null 2>&1
+            read
         ;;
 
     "$opt5" ) #snoop
@@ -44,6 +48,7 @@ case $nicknamemenu in
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             snoop -w "$nickname" -t 9
                 thunar "/home/user/snoop/results" >/dev/null 2>&1
+                read
         ;;
 
     "$opt6" ) #Mailcat
@@ -51,5 +56,6 @@ case $nicknamemenu in
         mkdir -p "/home/user/Cases/Nickname/$nickname"
             python3 /home/user/Tools/mailcat/mailcat.py "$nickname" | tee -a "/home/user/Cases/Nickname/$nickname/$nickname.txt"
                 gedit "/home/user/Cases/Nickname/$nickname/$nickname.txt"
+                read
         ;;
 esac
