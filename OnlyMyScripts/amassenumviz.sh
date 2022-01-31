@@ -34,3 +34,5 @@ while read -r links; do
 done < "$FILE"
 
 thunar "$HOME/Cases/$domain" >/dev/null 2>&1
+
+read
