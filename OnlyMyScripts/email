@@ -14,6 +14,7 @@ case $emailmenu in
             cd "/home/user/Cases/Email/$email" || exit
             holehe "$email" --csv
             thunar "/home/user/Cases/Email/$email"  >/dev/null 2>&1
+            read
         ;;
     
     "$opt2" ) #SocialScan
@@ -21,6 +22,7 @@ case $emailmenu in
         mkdir -p "/home/user/Cases/Email/$email"
             socialscan "$email" --json "/home/user/Cases/Email/$email/$email.txt"
                 gedit "/home/user/Cases/Email/$email/$email.txt"
+                read
         ;;
     
     "$opt3" ) #Mosint
@@ -29,6 +31,7 @@ case $emailmenu in
             cd "/home/user/Tools/mosint" || exit
              go run main.go -e "$email" -all | tee -a "/home/user/Cases/Email/$email/$email.txt"
                 gedit "/home/user/Cases/Email/$email/$email.txt"
+                read
         ;;
 
 esac   
