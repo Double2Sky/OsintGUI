@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "<txt><span weight=\"bold\">" $(curl -s https://api.ipify.org) "</span></txt>"
+echo "<tool>""</tool>"
+## EoF ##
