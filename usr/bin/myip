@@ -2,3 +2,4 @@
 IP=$(curl ident.me)
 whois $IP
 echo $IP
+speedtest
